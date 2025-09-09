@@ -1,37 +1,33 @@
-/* Importação da fonte Montserrat */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap');
 
-/* Reset e configurações globais */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif; /* Define a fonte padrão */
+  font-family: 'Montserrat', sans-serif; 
 }
 
-/* Configurações do corpo da página */
 body {
-  background-color: #f8f8e8; /* Cor de fundo suave */
-  color: #1e402f; /* Cor de texto principal (verde escuro) */
+  background-color: #f8f8e8; 
+  color: #1e402f; 
   text-align: center;
   overflow-x: hidden;
   font-size: 1rem;
 }
 
-/* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 7rem; /* Aumenta o padding à esquerda para deslocar o conteúdo */
-  background-color: #1e402f; /* Fundo verde escuro */
-  color: #f4ffb4; /* Texto amarelo claro */
+  padding: 1rem 7rem; 
+  background-color: #1e402f; 
+  color: #f4ffb4;
   position: relative;
   z-index: 10;
 }
 
 .cabecalho-esquerda {
-  flex: 1; /* Permite que a seção esquerda cresça */
+  flex: 1; 
 }
 
 .logo-link {
@@ -55,9 +51,9 @@ header {
 }
 
 .cabecalho-centro {
-  flex: 2; /* Ocupa mais espaço, empurrando a navegação */
+  flex: 2; 
   display: flex;
-  justify-content: flex-start; /* Alinha a navegação à esquerda */
+  justify-content: flex-start; 
 }
 
 .menu {
@@ -94,7 +90,6 @@ header {
   left: 0;
 }
 
-/* Main Content */
 main {
   max-width: 62.5rem;
   margin: 4.375rem auto 0;
@@ -102,7 +97,6 @@ main {
   text-align: left;
 }
 
-/* Seção do Mapa */
 .secao-mapa-biomas {
   margin-bottom: 2rem;
   animation: fadeInDown 1s ease-out;
@@ -133,7 +127,6 @@ main {
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Legenda */
 .legenda {
   background: rgba(255, 255, 255, 0.85);
   border-radius: 0.75rem;
@@ -178,7 +171,6 @@ main {
   border: 2px solid rgba(0, 0, 0, 0.1);
 }
 
-/* Cores da legenda */
 .floresta-tropical { background-color: #2ca02c; }
 .floresta-boreal { background-color: #16653d; }
 .tundra { background-color: #a0aec0; }
@@ -187,7 +179,6 @@ main {
 .mediterraneo { background-color: #eab308; }
 .manguezal { background-color: #3b82f6; }
 
-/* Animações */
 @keyframes fadeInDown {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }

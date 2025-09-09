@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BioTech - Quiz Floresta Temperada</title>
-  <link rel="stylesheet" href="terceira-página-florestatemp-resposta.css" />
+  <link rel="stylesheet" href="terceira-página-florestatemp-resposta-nova.css" />
   <link rel="stylesheet" href="../../../header.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,42 +38,53 @@
 
   <img src="../imgs/floresta temperada fundo.jpg" alt="Fundo" class="bg-image" />
 
-  <main class="quiz-container">
-    <div id="feedback-container">
-      <h2 id="feedback-title"></h2>
-      <p id="feedback-text"></p>
-      <button id="feedback-button" class="feedback-button"></button>
-    </div>
-  </main>
+  <div class="card-container">
+        <div class="card">
+          <h2 id="resposta-titulo"></h2>
+          <p id="resposta-texto"></p>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill"></div>
+          </div>
+        </div>
+      </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const urlParams = new URLSearchParams(window.location.search);
-      const destino = urlParams.get('destino');
+    const urlParams = new URLSearchParams(window.location.search);
+    const destino = urlParams.get('destino'); 
 
-      const feedbackContainer = document.getElementById("feedback-container");
-      const feedbackTitle = document.getElementById("feedback-title");
-      const feedbackText = document.getElementById("feedback-text");
-      const feedbackButton = document.getElementById("feedback-button");
+    const titulo = document.getElementById('resposta-titulo');
+    const texto = document.getElementById('resposta-texto');
 
-      if (destino === 'correto') {
-        feedbackContainer.className = 'feedback-container feedback-correto';
-        feedbackTitle.textContent = "Correto!";
-        feedbackText.textContent = "Isso mesmo! As coníferas e as árvores de folhas largas são as mais adaptadas a esse bioma.";
-        feedbackButton.textContent = "Finalizar Quiz";
-        feedbackButton.onclick = function () {
-          window.location.href = '../conclusao/conclusão-florestatemp.html';
-        };
+    if (destino === 'correto') {
+      titulo.textContent = 'Parabéns! Resposta correta!';
+      texto.textContent = 'Isso mesmo! As coníferas e as árvores de folhas largas são as mais adaptadas a esse bioma.';
+    } else {
+      titulo.textContent = 'Ops! Resposta incorreta.';
+      texto.textContent = 'Poxa, não foi dessa vez. Que tal revisar o conteúdo sobre a flora local?';
+    }
+    
+    const barra = document.querySelector('.progress-bar-fill');
+    const duracao = 5000; 
+    let inicio = null;
+
+    function animarBarra(tempo) {
+      if (!inicio) inicio = tempo;
+      const decorrido = tempo - inicio;
+      const porcentagem = Math.min((decorrido / duracao) * 100, 100);
+      barra.style.width = porcentagem + '%';
+
+      if (decorrido < duracao) {
+        requestAnimationFrame(animarBarra);
       } else {
-        feedbackContainer.className = 'feedback-container feedback-incorreto';
-        feedbackTitle.textContent = "Incorreto!";
-        feedbackText.textContent = "Poxa, não foi dessa vez. Que tal revisar o conteúdo sobre a flora local?";
-        feedbackButton.textContent = "Tentar Novamente";
-        feedbackButton.onclick = function () {
-          window.location.href = '../quiz1/primeira-página-florestatemp.html';
-        };
-      }
-    });
+          if (destino === 'correto') {
+            window.location.href = '../conclusao/conclusão-florestatemp.html';
+          } else {
+            window.location.href = './terceira-página-florestatemp.html';
+          }
+        }
+    }
+
+    requestAnimationFrame(animarBarra);
   </script>
 
 </body>

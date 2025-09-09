@@ -18,15 +18,17 @@
 
   <header>
     <div class="cabecalho-esquerda">
-      <div class="logo">
-        <img src="../../../home/imgs/leaf.png" alt="Logo" />
-        <span>BioTech</span>
-      </div>
+      <a href="../../../index.html" class="logo-link">
+        <div class="logo">
+          <img src="../../../home/imgs/leaf.png" alt="Logo" />
+          <span>BioTech</span>
+        </div>
+      </a>
     </div>
 
     <div class="cabecalho-centro">
       <nav class="menu">
-        <a href="../../../conteudo/floresta-temperada/floresta-temperada.html">Conteúdo</a>
+        <a href="../../../conteudo/floresta-temperada/florestatemp.html">Conteúdo</a>
         <a href="../../../inicio-quiz/inicio-quiz/quiz.html">Quiz</a>
         <a href="../../../mapa/mapa.html">Mapa</a>
       </nav>
@@ -40,10 +42,10 @@
     </div>
 
     <div class="emblemas">
-      <img src="../imgs/florestatemp-emblema.png" alt="Emblema Floresta Tropical" class="emblema ativo" />
-      <img src="../imgs/tundra-emblema.png" alt="Emblema Tundra" class="emblema" />
-      <img src="../imgs/emblemaflorestatemp.png" alt="Emblema Floresta Temperada" class="emblema" />
-      <img src="../imgs/savana-emblema.png" alt="Emblema Savana" class="emblema" />
+      <img src="../../tropical/imgs/florestatrop-emblema.png" alt="Emblema Floresta Tropical" class="emblema ativo" />
+      <img src="../../tundra/imgs/tundra-emblema.png" alt="Emblema Tundra" class="emblema" />
+      <img src="../imgs/florestatemp-emblema.png" alt="Emblema Floresta Temperada" class="emblema" />
+      <img src="../../savana/imgs/savana-emblema.png" alt="Emblema Savana" class="emblema" />
     </div>
 
     <img src="../imgs/dino-na-floresta-temperada.png" alt="Dino lendo livro" class="dino" />
@@ -53,13 +55,13 @@
     setTimeout(() => {
       const emblemas = document.querySelectorAll(".emblemas img");
       if (emblemas.length > 1) {
-        emblemas[1].classList.add("ativo"); // Acende o segundo emblema (Tundra)
+        emblemas[1].classList.add("ativo");
       }
 
       setTimeout(() => {
         window.location.href = "../quiz1/primeira-página-florestatemp.html";
-      }, 1000);
-    }, 2000);
+      }, 5000);
+    }, 1000);
   </script>
 
 </body>

@@ -2,54 +2,61 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BioTech - Seu assistente de estudos</title>
-  <link rel="stylesheet" href="conclusão-florestatemp.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioTech - Quiz Concluído</title>
+  <link rel="stylesheet" href="./conclusão-florestatemp.css">
   <link rel="stylesheet" href="../../../header.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
   <header>
     <div class="cabecalho-esquerda">
-      <div class="logo">
-        <img src="../../../home/imgs/leaf.png" alt="Logo" />
-        <span>BioTech</span>
-      </div>
+      <a href="../../../index.html" class="logo-link">
+        <div class="logo">
+          <img src="../../../home/imgs/leaf.png" alt="Logo" />
+          <span>BioTech</span>
+        </div>
+      </a>
     </div>
     <div class="cabecalho-centro">
       <nav class="menu">
-        <a href="../../../conteudo/floresta-temperada/floresta-temperada.html">Conteúdo</a>
+        <a href="../../../conteudo/temperada/temperada.html">Conteúdo</a>
         <a href="../../../inicio-quiz/inicio-quiz/quiz.html">Quiz</a>
         <a href="../../../mapa/mapa.html">Mapa</a>
       </nav>
     </div>
   </header>
-  <main class="conclusao-container">
-    <img src="../imgs/floresta temperada fundo.jpg" alt="Fundo Floresta" class="bg-conclusao" />
-    <section class="conclusao-box">
-      <h1>FLORESTA TEMPERADA</h1>
-      <div class="mensagem-box">
-        <p>Parabéns você concluiu o bioma floresta temperada!</p>
-        <p>Aqui está o seu emblema!</p>
+
+  <img src="../imgs/floresta temperada fundo.jpg" alt="Fundo" class="bg-image">
+
+  <main class="container-final">
+    <div class="box-final">
+      <h1 class="titulo-final">Parabéns!</h1>
+      <div class="texto-box-final">
+        <p>Você concluiu o quiz sobre a Floresta Temperada e ganhou um novo emblema!</p>
       </div>
-      <img src="../imgs/emblemaflorestatemp.png" alt="Emblema Floresta Temperada" class="emblema-final" />
-    </section>
+      <img src="../imgs/emblemaflorestatemp.png" alt="Emblema Floresta Temperada" class="emblema-final">
+    </div>
   </main>
-<script>
+
+  <script>
     window.addEventListener('load', () => {
+      const emblema = document.querySelector('.emblema-final');
+      if (emblema) {
+        emblema.style.filter = 'brightness(1)';
+      }
+      
       setTimeout(() => {
-        const emblema = document.querySelector('.emblema-final');
-        if (emblema) {
-          emblema.style.filter = 'brightness(1)';
-        }
-       window.location.href = '../../savana/introducao/savana.inicio.html'
-      }, 5000);
+        window.location.href = '../../savana/introducao/savana.inicio.html';
+      }, 4000); 
     });
   </script>
+
 </body>
+
 </html>

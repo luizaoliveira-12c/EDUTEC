@@ -4,22 +4,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BioTech - Seu assistente de estudos</title>
+  <title>BioTech - Bem vindo a Savana!</title>
   <link rel="stylesheet" href="savana.inicio.css" />
-  <link rel="stylesheet" href="../../../header.css" />
+  <link rel="stylesheet" href="../../../header.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
 </head>
 
 <body>
+  <img src="../imgs/savana fundo.jpg" alt="Fundo" class="bg-image">
 
   <header>
     <div class="cabecalho-esquerda">
-      <div class="logo">
-        <img src="../../../home/imgs/leaf.png" alt="Logo" />
-        <span>BioTech</span>
-      </div>
+      <a href="../../../index.html" class="logo-link">
+        <div class="logo">
+          <img src="../../../home/imgs/leaf.png" alt="Logo" />
+          <span>BioTech</span>
+        </div>
+      </a>
     </div>
 
     <div class="cabecalho-centro">
@@ -29,36 +32,39 @@
         <a href="../../../mapa/mapa.html">Mapa</a>
       </nav>
     </div>
+
   </header>
 
-  <main class="savana-container">
+  <main class="intro-container">
     <div class="mensagens">
-      <p>Bem-vindo à Savana!! <br />Parabéns por ter chegado até aqui!</p>
-      <p>Até agora você conquistou 3 emblemas! Faltam apenas 1!</p>
+      <p>Bem vindo a Savana! <br />Parabéns por ter chegado até aqui!</p>
+      <p>Até agora você conquistou 2 emblemas! Faltam apenas 2!</p>
     </div>
 
     <div class="emblemas">
-      <img src="../../tropical/imgs/florestatrop-emblema.png" alt="Emblema Floresta Tropical" class="emblema ativo" />
-      <img src="../../tundra/imgs/tundra-emblema.png" alt="Emblema Tundra" class="emblema ativo" />
-      <img src="../../temperada/imgs/florestatemp-emblema.png" alt="Emblema Floresta Temperada" class="emblema" />
-      <img src="../imgs/savana-emblema.png" alt="Emblema Savana" class="emblema" />
+      <img src="../../tropical/imgs/florestatrop-emblema.png" alt="Emblema Floresta Tropical" class="emblema-conquistado" />
+      <img src="../../tundra/imgs/tundra-emblema.png" alt="Emblema Tundra" class="emblema-conquistado" />
+      <img src="../../temperada/imgs/emblemaflorestatemp.png" alt="Emblema Floresta Temperada" />
+      <img src="../../savana/imgs/savana-emblema.png" alt="Emblema Savana" />
     </div>
 
     <img src="../imgs/dino-na-savana.png" alt="Dino lendo livro" class="dino" />
+    
   </main>
 
   <script>
     setTimeout(() => {
-      const savanaEmblema = document.querySelectorAll(".emblema")[3];
-      if (savanaEmblema) {
-        savanaEmblema.classList.add("ativo");
+      const emblemas = document.querySelectorAll(".emblemas img");
+      if (emblemas.length > 2) {
+        emblemas[2].style.filter = "brightness(1)";
       }
 
       setTimeout(() => {
         window.location.href = "../quiz1/primeira-página-savana.html";
-      }, 1000);
+      }, 3000);
     }, 2000);
   </script>
-
+  
 </body>
+
 </html>

@@ -1,4 +1,3 @@
-/* Estilos Globais e Imagem de Fundo */
 * {
   margin: 0;
   padding: 0;
@@ -11,33 +10,31 @@ body {
   display: flex;
   flex-direction: column;
   color: white;
-  overflow: hidden; /* Evita barras de rolagem desnecessárias */
+  overflow: hidden; 
 }
 
 .bg-image {
-  position: fixed; /* Mantém a imagem fixa durante a rolagem */
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1; /* Coloca a imagem atrás de todo o conteúdo */
-  filter: blur(3px) brightness(0.7); /* Desfoque e escurecimento para legibilidade */
+  z-index: -1; 
+  filter: blur(3px) brightness(0.7); 
 }
 
-/* Container do Card */
 .card-container {
-  flex-grow: 1; /* Ocupa o espaço restante */
+  flex-grow: 1; 
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem;
 }
 
-/* Estilo do Card de Resposta */
 .card {
-  background-color: rgba(30, 64, 47, 0.85); /* Fundo semitransparente mais escuro */
-  color: #f4ffb4; /* Texto amarelo claro para contraste */
+  background-color: rgba(30, 64, 47, 0.85); 
+  color: #f4ffb4; 
   padding: 2.5rem 3rem;
   border-radius: 15px;
   text-align: center;
@@ -45,7 +42,7 @@ body {
   width: 100%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(244, 255, 180, 0.2);
-  backdrop-filter: blur(5px); /* Efeito de vidro fosco no fundo do card */
+  backdrop-filter: blur(5px); 
 }
 
 .card h2 {
@@ -60,7 +57,6 @@ body {
   margin-bottom: 2.5rem;
 }
 
-/* Barra de Progresso */
 .progress-bar-container {
   width: 100%;
   height: 10px;

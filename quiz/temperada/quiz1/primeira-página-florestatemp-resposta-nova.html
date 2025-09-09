@@ -38,42 +38,53 @@
 
   <img src="../imgs/floresta temperada fundo.jpg" alt="Fundo" class="bg-image" />
 
-  <main class="quiz-container">
-    <div id="feedback-container">
-      <h2 id="feedback-title"></h2>
-      <p id="feedback-text"></p>
-      <button id="feedback-button" class="feedback-button"></button>
-    </div>
-  </main>
+  <div class="card-container">
+        <div class="card">
+          <h2 id="resposta-titulo"></h2>
+          <p id="resposta-texto"></p>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill"></div>
+          </div>
+        </div>
+      </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const urlParams = new URLSearchParams(window.location.search);
-      const destino = urlParams.get('destino');
+    const urlParams = new URLSearchParams(window.location.search);
+    const destino = urlParams.get('destino'); 
 
-      const feedbackContainer = document.getElementById("feedback-container");
-      const feedbackTitle = document.getElementById("feedback-title");
-      const feedbackText = document.getElementById("feedback-text");
-      const feedbackButton = document.getElementById("feedback-button");
+    const titulo = document.getElementById('resposta-titulo');
+    const texto = document.getElementById('resposta-texto');
 
-      if (destino === 'correto') {
-        feedbackContainer.className = 'feedback-container feedback-correto';
-        feedbackTitle.textContent = "Correto!";
-        feedbackText.textContent = "Você acertou! As quatro estações bem definidas são a principal característica da floresta temperada.";
-        feedbackButton.textContent = "Próxima Pergunta";
-        feedbackButton.onclick = function () {
-          window.location.href = '../quiz2/segunda-página-florestatemp.html';
-        };
+    if (destino === 'correto') {
+      titulo.textContent = 'Parabéns! Resposta correta!';
+      texto.textContent = 'A resposta correta é: As quatro estações bem definidas.';
+    } else {
+      titulo.textContent = 'Ops! Resposta incorreta.';
+      texto.textContent = 'A resposta correta era: As quatro estações bem definidas.';
+    }
+    
+    const barra = document.querySelector('.progress-bar-fill');
+    const duracao = 5000; 
+    let inicio = null;
+
+    function animarBarra(tempo) {
+      if (!inicio) inicio = tempo;
+      const decorrido = tempo - inicio;
+      const porcentagem = Math.min((decorrido / duracao) * 100, 100);
+      barra.style.width = porcentagem + '%';
+
+      if (decorrido < duracao) {
+        requestAnimationFrame(animarBarra);
       } else {
-        feedbackContainer.className = 'feedback-container feedback-incorreto';
-        feedbackTitle.textContent = "Incorreto!";
-        feedbackText.textContent = "Ops, não foi dessa vez. Que tal revisar o conteúdo e tentar de novo?";
-        feedbackButton.textContent = "Tentar Novamente";
-        feedbackButton.onclick = function () {
-          window.location.href = './primeira-página-florestatemp.html';
-        };
-      }
-    });
+          if (destino === 'correto') {
+            window.location.href = '../quiz2/segunda-página-florestatemp.html';
+          } else {
+            window.location.href = './primeira-página-florestatemp.html';
+          }
+        }
+    }
+
+    requestAnimationFrame(animarBarra);
   </script>
 
 </body>

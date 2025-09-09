@@ -2,24 +2,26 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BioTech - Seu assistente de estudos</title>
-  <link rel="stylesheet" href="conclusão-savana.css" />
-  <link rel="stylesheet" href="../../../header.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioTech - Quiz Concluído</title>
+  <link rel="stylesheet" href="./conclusão-savana.css">
+  <link rel="stylesheet" href="../../../header.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
   <header>
     <div class="cabecalho-esquerda">
-      <div class="logo">
-        <img src="../../../home/imgs/leaf.png" alt="Logo" />
-        <span>BioTech</span>
-      </div>
+      <a href="../../../index.html" class="logo-link">
+        <div class="logo">
+          <img src="../../../home/imgs/leaf.png" alt="Logo" />
+          <span>BioTech</span>
+        </div>
+      </a>
     </div>
     <div class="cabecalho-centro">
       <nav class="menu">
@@ -29,27 +31,32 @@
       </nav>
     </div>
   </header>
-  <main class="conclusao-container">
-    <img src="../imgs/savana fundo.jpg" alt="Fundo Savana" class="bg-conclusao" />
-    <section class="conclusao-box">
-      <h1>SAVANA</h1>
-      <div class="mensagem-box">
-        <p>Parabéns você concluiu o bioma savana!</p>
-        <p>Aqui está o seu emblema!</p>
+
+  <img src="../imgs/savana fundo.jpg" alt="Fundo" class="bg-image">
+
+  <main class="container-final">
+    <div class="box-final">
+      <h1 class="titulo-final">Parabéns!</h1>
+      <div class="texto-box-final">
+        <p>Você concluiu o quiz sobre a Savana e ganhou um novo emblema!</p>
       </div>
-      <img src="../imgs/savana-emblema.png" alt="Emblema Savana" class="emblema-final" />
-    </section>
+      <img src="../imgs/savana-emblema.png" alt="Emblema Savana" class="emblema-final">
+    </div>
   </main>
-<script>
+
+  <script>
     window.addEventListener('load', () => {
+      const emblema = document.querySelector('.emblema-final');
+      if (emblema) {
+        emblema.style.filter = 'brightness(1)';
+      }
+      
       setTimeout(() => {
-        const emblema = document.querySelector('.emblema-final');
-        if (emblema) {
-          emblema.style.filter = 'brightness(1)';
-        }
-       window.location.href = '../../conclusao-geral/conclusao-geral.html'
-      }, 5000);
+        window.location.href = '../../conclusao-geral/conclusao-geral.html';
+      }, 4000); 
     });
   </script>
+
 </body>
+
 </html>

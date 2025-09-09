@@ -78,7 +78,7 @@ body, html {
 
 .caixa-preparacao {
   background-color: rgba(45, 80, 45, 0.85);
-  padding: 0.9375rem 1.25rem; /* 15px 20px */
+  padding: 0.9375rem 1.25rem; 
   border-radius: 0.5rem; 
   margin-bottom: 1.5625rem; 
   width: 100%;

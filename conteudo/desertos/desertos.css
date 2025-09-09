@@ -1,4 +1,3 @@
-/* Reset e configurações globais */
 * {
     padding: 0;
     box-sizing: border-box;
@@ -15,7 +14,6 @@
     text-decoration: none;
   }
   
-  /* Variáveis globais */
   :root {
     --verde-escuro: #1e402f;
     --branco-fundo: #f7fbea;
@@ -27,7 +25,6 @@
     --verde-claro: #c6d6b0;
   }
   
-  /* Título principal */
   .titulo {
     font-weight: 700;
     font-size: 3.5rem;
@@ -36,7 +33,6 @@
     color: var(--verde-escuro);
   }
   
-  /* Fundo de destaque atrás dos cartões */
   .fundo-destaque {
     position: absolute;
     top: 72px;
@@ -50,7 +46,6 @@
     box-shadow: 3px 0 7px #88916b inset, -3px 0 7px #88916b inset;
   }
   
-  /* Container dos cartões */
   .cartoes-container {
     position: relative;
     max-width: 2280px;
@@ -62,7 +57,6 @@
     flex-wrap: wrap;
   }
   
-  /* Cartão individual */
   .cartao {
     position: relative;
     background-color: var(--branco-fundo);
@@ -77,7 +71,6 @@
     min-height: 480px;
   }
   
-  /* Cabeçalho do cartão */
   .cartao h2 {
     font-weight: 800;
     text-align: center;
@@ -88,7 +81,6 @@
     letter-spacing: 0.4px;
   }
   
-  /* Parágrafo do cartão */
   .cartao p {
     font-size: 0.96rem;
     line-height: 1.5;
@@ -101,7 +93,6 @@
     word-spacing: normal;
   }
   
-  /* Imagem dentro do cartão */
   .cartao img {
     margin-top: 20px;
     width: 100%;
@@ -110,7 +101,6 @@
     border-radius: 10px;
   }
   
-  /* Container dos botões */
   .botoes-container {
     max-width: 1380px;
     margin: 0 auto 40px;
@@ -119,7 +109,6 @@
     justify-content: space-between;
   }
   
-  /* Botões padrão */
   .botao-voltar,
   .botao-proximo {
     background-color: #bfc2a7;
@@ -136,7 +125,6 @@
     transition: background-color 0.3s ease;
   }
   
-  /* Botões de navegação fixos */
   .botao-proxima-pagina,
   .botao-voltar-pagina {
     position: fixed;
@@ -164,7 +152,6 @@
     left: 30px;
   }
   
-  /* Efeitos hover dos botões */
   .botao-voltar:hover,
   .botao-proximo:hover,
   .botao-proxima-pagina:hover,
@@ -173,7 +160,6 @@
     color: white;
   }
   
-  /* Ícone dentro do cartão */
   .icone-container {
     display: flex;
     justify-content: center;
@@ -188,7 +174,6 @@
     object-fit: contain;
   }
   
-  /* Tema do cartão (possivelmente título menor ou subtítulo) */
   .tema {
     height: 25px;
     align-items: center;

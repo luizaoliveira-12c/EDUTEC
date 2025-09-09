@@ -1,56 +1,86 @@
-main.conclusao-container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
-  
-.bg-conclusao {
-  position: absolute;
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  overflow: hidden;
+}
+
+.bg-image {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: -1;
+  filter: blur(3px) brightness(0.7);
 }
 
-.conclusao-box {
-  background-color: rgba(0, 0, 0, 0.45);
-  color: white;
+.container-final {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.box-final {
+  background-color: rgba(89, 64, 47, 0.85);
+  color: #f4f0b4; 
   padding: 3rem 4rem;
-  max-width: 800px;
-  width: 90%;
+  border-radius: 20px;
   text-align: center;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(244, 240, 180, 0.25); 
+  backdrop-filter: blur(8px);
+  transform: scale(0.95);
+  animation: fadeInScale 0.8s ease-out forwards;
 }
 
-.conclusao-box h1 {
-  font-size: 2.2rem;
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.titulo-final {
+  font-size: 2.8rem;
   font-weight: 700;
-  margin-bottom: 2rem;
-  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-.mensagem-box {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 1.5rem;
-  border-radius: 10px;
+.texto-box-final p {
+  font-size: 1.4rem;
+  line-height: 1.7;
   margin-bottom: 2rem;
-}
-  
-.mensagem-box p {
-  margin: 0.75rem 0;
-  font-size: 1.3rem;
-  font-weight: 500;
 }
 
 .emblema-final {
-  width: 220px;
+  width: 150px;
   height: auto;
-  margin-top: 1rem;
-} 
+  margin-bottom: 2.5rem;
+  animation: float 3s ease-in-out infinite;
+  filter: brightness(0.7); 
+  transition: filter 1s ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}

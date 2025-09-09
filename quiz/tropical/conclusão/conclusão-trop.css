@@ -1,4 +1,3 @@
-/* Estilos Globais e Imagem de Fundo */
 * {
   margin: 0;
   padding: 0;
@@ -25,7 +24,6 @@ body {
   filter: blur(3px) brightness(0.7);
 }
 
-/* Container Principal */
 .container-final {
   flex-grow: 1;
   display: flex;
@@ -34,7 +32,6 @@ body {
   padding: 2rem;
 }
 
-/* Caixa de Conclusão */
 .box-final {
   background-color: rgba(30, 64, 47, 0.85);
   color: #f4ffb4;

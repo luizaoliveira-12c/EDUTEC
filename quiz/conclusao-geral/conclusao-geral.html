@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BioTech - Quiz Concluído!</title>
-  <link rel="stylesheet" href="conclusao-geral.css">
+  <link rel="stylesheet" href="./conclusao-geral.css">
   <link rel="stylesheet" href="../../header.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,23 +22,30 @@
     </div>
     <div class="cabecalho-centro">
       <nav class="menu">
+        <a href="../../conteudo/conteudo.html">Conteúdo</a>
         <a href="../../inicio-quiz/inicio-quiz/quiz.html">Quiz</a>
         <a href="../../mapa/mapa.html">Mapa</a>
       </nav>
     </div>
   </header>
-  <main class="conclusao-geral-container">
-    <div class="card-conclusao">
-      <h1>Parabéns, explorador!</h1>
-      <p>Você completou a jornada pelos biomas e coletou todos os emblemas. Sua dedicação e conhecimento são admiráveis!</p>
+
+  <img src="../tropical/imgs/fundoflorestatrop.png" alt="Fundo" class="bg-image">
+
+  <main class="container-final">
+    <div class="box-final">
+      <h1 class="titulo-final">Parabéns, explorador!</h1>
+      <div class="texto-box-final">
+        <p>Você completou a jornada pelos biomas e coletou todos os emblemas. Sua dedicação e conhecimento são admiráveis!</p>
+      </div>
       <div class="emblemas-finais">
         <img src="../tropical/imgs/florestatrop-emblema.png" alt="Emblema Floresta Tropical">
         <img src="../tundra/imgs/tundra-emblema.png" alt="Emblema Tundra">
         <img src="../temperada/imgs/florestatemp-emblema.png" alt="Emblema Floresta Temperada">
         <img src="../savana/imgs/savana-emblema.png" alt="Emblema Savana">
       </div>
-      <button onclick="window.location.href='../../inicio-quiz/inicio-quiz/quiz.html'">Jogar Novamente</button>
+      <a href="../../index.html" class="botao-final">Voltar para a Home</a>
     </div>
+    <img src="../tropical/imgs/dino-acenando.png" alt="Dinossauro amigável" class="dino-amigo">
   </main>
 </body>
 </html>
