@@ -28,7 +28,7 @@
     
         <div class="cabecalho-centro">
           <nav class="menu">
-            <a href="../../../conteudo/tundra/tundra.html">Conteúdo</a>
+            <a href="../../../conteudo/floresta-tropical/floresta-tropical.html">Conteúdo</a>
             <a href="../../../inicio-quiz/inicio-quiz/quiz.html">Quiz</a>
             <a href="../../../mapa/mapa.html">Mapa</a>
           </nav>
@@ -38,52 +38,52 @@
       <img src="../imgs/fundoflorestatrop.png" alt="" class="bg-image">
 
       <div class="card-container">
-        <div class="card">
-          <h2 id="resposta-titulo"></h2>
-          <p id="resposta-texto"></p>
-          <div class="progress-bar-container">
-            <div class="progress-bar-fill"></div>
-          </div>
+        <div class="card" id="card-resposta">
+          
         </div>
       </div>
 
   <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const destino = urlParams.get('destino'); 
+    document.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const destino = urlParams.get('destino'); 
+      const cardResposta = document.getElementById('card-resposta');
 
-    const titulo = document.getElementById('resposta-titulo');
-    const texto = document.getElementById('resposta-texto');
+      if (destino === 'correto') {
+        cardResposta.innerHTML = `
+          <h2>Parabéns! Resposta correta!</h2>
+          <p>A resposta correta é: América do Sul.</p>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill"></div>
+          </div>
+        `;
+        
+        const barra = document.querySelector('.progress-bar-fill');
+        const duracao = 3000;
+        let inicio = null;
 
-    if (destino === 'correto') {
-      titulo.textContent = 'Parabéns! Resposta correta!';
-      texto.textContent = 'A resposta correta é: América do Sul.';
-    } else {
-      titulo.textContent = 'Ops! Resposta incorreta.';
-      texto.textContent = 'A resposta correta era: América do Sul.';
-    }
-    
-    const barra = document.querySelector('.progress-bar-fill');
-    const duracao = 5000; 
-    let inicio = null;
+        function animarBarra(tempo) {
+          if (!inicio) inicio = tempo;
+          const decorrido = tempo - inicio;
+          const porcentagem = Math.min((decorrido / duracao) * 100, 100);
+          barra.style.width = porcentagem + '%';
 
-    function animarBarra(tempo) {
-      if (!inicio) inicio = tempo;
-      const decorrido = tempo - inicio;
-      const porcentagem = Math.min((decorrido / duracao) * 100, 100);
-      barra.style.width = porcentagem + '%';
-
-      if (decorrido < duracao) {
-        requestAnimationFrame(animarBarra);
-      } else {
-          if (destino === 'correto') {
-            window.location.href = '../conclusão/conclusão-trop.html';
+          if (decorrido < duracao) {
+            requestAnimationFrame(animarBarra);
           } else {
-            window.location.href = '../quiz1/primeirapagtropquiz.html';
+            window.location.href = '../conclusão/conclusão-trop.html';
           }
         }
-    }
+        requestAnimationFrame(animarBarra);
 
-    requestAnimationFrame(animarBarra);
+      } else {
+        cardResposta.innerHTML = `
+          <h2>Ops! Resposta incorreta.</h2>
+          <p>A resposta correta era: América do Sul.</p>
+          <button class="retry-btn" onclick="window.location.href='./quiztrop3.html'">Tentar Novamente</button>
+        `;
+      }
+    });
   </script>
 
 </body>

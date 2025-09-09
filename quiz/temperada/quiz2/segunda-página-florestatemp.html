@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BioTech - Quiz Floresta Tropical</title>
+  <title>BioTech - Quiz Floresta Temperada</title>
   <link rel="stylesheet" href="segunda-página-florestatemp.css" />
   <link rel="stylesheet" href="../../../header.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,20 +19,24 @@
 
   <header>
     <div class="cabecalho-esquerda">
+      <a href="../../../index.html" class="logo-link">
       <div class="logo">
         <img src="../../../home/imgs/leaf.png" alt="Logo" />
         <span>BioTech</span>
       </div>
+      </a>
     </div>
 
     <div class="cabecalho-centro">
       <nav class="menu">
-        <a href="../../../conteudo/floresta-temperada/floresta-temperada.html">Conteúdo</a>
+        <a href="../../../conteudo/temperada/temperada.html">Conteúdo</a>
         <a href="../../../inicio-quiz/inicio-quiz/quiz.html">Quiz</a>
         <a href="../../../mapa/mapa.html">Mapa</a>
       </nav>
     </div>
   </header>
+
+  <img src="../imgs/floresta temperada fundo.jpg" alt="Fundo" class="bg-image" />
 
   <main class="quiz-container">
     <div class="quiz-header">
@@ -40,28 +44,28 @@
       <div class="quiz-progress">2/3</div>
     </div>
 
-    <img src="../imgs/florestatempimg2.png" alt="Floresta Tropical" class="quiz-image" />
+    <img src="../imgs/florestatempimg2.png" alt="Floresta Temperada" class="quiz-image" />
 
     <div class="quiz-question">
-        A floresta temperada pode ser encontrada em que região do planeta?
+        Quais animais são comuns na floresta temperada?
     </div>
 
     <div class="quiz-options">
       <!-- Opções -->
       <button class="option-btn incorrect"
-        onclick="window.location.href='segunda-página-florestatemp-resposta.html?destino=incorreto'">
-        Regiões tropicais e quentes
+        onclick="window.location.href='./segunda-página-florestatemp-resposta.html?destino=incorreto'">
+        Ursos Polares e pinguins
       </button>
 
-      <button class="option-btn correct"
-        onclick="window.location.href='segunda-página-florestatemp-resposta.html?destino=correto'">
-        Regiões com clima temperada, como partes da América do Norte
+      <button class="option-btn correct" onclick="window.location.href='./segunda-página-florestatemp-resposta.html?destino=correto'">
+        Esquilos, veados e ursos
       </button>
 
       <button class="option-btn incorrect"
-        onclick="window.location.href='segunda-página-florestatemp-resposta.html?destino=incorreto'">
-        Perto dos polos norte e sul
+        onclick="window.location.href='./segunda-página-florestatemp-resposta.html?destino=incorreto'">
+        Cangurus e coalas
       </button>
+
     </div>
 
     <img src="../imgs/dino-na-floresta-temperada.png" alt="Dino" class="quiz-dino" />

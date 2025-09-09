@@ -4,75 +4,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BioTech - Resposta Floresta Temperada</title>
-  <link rel="stylesheet" href="terceira-página-florestatemp-resposta-nova.css" />
+  <title>BioTech - Quiz Floresta Temperada</title>
+  <link rel="stylesheet" href="terceira-página-florestatemp-resposta.css" />
   <link rel="stylesheet" href="../../../header.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
 </head>
+
 <body>
 
   <header>
     <div class="cabecalho-esquerda">
+      <a href="../../../index.html" class="logo-link">
       <div class="logo">
         <img src="../../../home/imgs/leaf.png" alt="Logo" />
         <span>BioTech</span>
       </div>
+      </a>
     </div>
 
     <div class="cabecalho-centro">
       <nav class="menu">
-        <a href="../../../conteudo/floresta-temperada/floresta-temperada.html">Conteúdo</a>
+        <a href="../../../conteudo/temperada/temperada.html">Conteúdo</a>
         <a href="../../../inicio-quiz/inicio-quiz/quiz.html">Quiz</a>
         <a href="../../../mapa/mapa.html">Mapa</a>
       </nav>
     </div>
   </header>
 
-  <main class="quiz-container quiz-response">
-    <h2>Resposta</h2>
-    <p>Aqui vai a resposta correta</p>
+  <img src="../imgs/floresta temperada fundo.jpg" alt="Fundo" class="bg-image" />
 
-    <div class="progress-bar-bottom">
-      <div class="progress-bar-fill"></div>
+  <main class="quiz-container">
+    <div id="feedback-container">
+      <h2 id="feedback-title"></h2>
+      <p id="feedback-text"></p>
+      <button id="feedback-button" class="feedback-button"></button>
     </div>
   </main>
 
   <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const destino = urlParams.get('destino'); 
+    document.addEventListener("DOMContentLoaded", function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const destino = urlParams.get('destino');
 
-    const messageEl = document.querySelector('.quiz-response h2');
-    const answerEl = document.querySelector('.quiz-response p');
+      const feedbackContainer = document.getElementById("feedback-container");
+      const feedbackTitle = document.getElementById("feedback-title");
+      const feedbackText = document.getElementById("feedback-text");
+      const feedbackButton = document.getElementById("feedback-button");
 
-    if (destino === 'correto') {
-      messageEl.textContent = 'Parabéns! Resposta correta!';
-      answerEl.textContent = 'A resposta correta é: Coníferas e árvores de folhas largas.';
-    } else {
-      messageEl.textContent = 'Ops! Resposta incorreta.';
-      answerEl.textContent = 'A resposta correta era: Coníferas e árvores de folhas largas.';
-    }
-
-    const progressBarFill = document.querySelector('.progress-bar-fill');
-    const duration = 3000; 
-    let start = null;
-
-    function animateProgress(timestamp) {
-      if (!start) start = timestamp;
-      const elapsed = timestamp - start;
-      const progressPercent = Math.min((elapsed / duration) * 100, 100);
-      progressBarFill.style.width = progressPercent + '%';
-
-      if (elapsed < duration) {
-        requestAnimationFrame(animateProgress);
+      if (destino === 'correto') {
+        feedbackContainer.className = 'feedback-container feedback-correto';
+        feedbackTitle.textContent = "Correto!";
+        feedbackText.textContent = "Isso mesmo! As coníferas e as árvores de folhas largas são as mais adaptadas a esse bioma.";
+        feedbackButton.textContent = "Finalizar Quiz";
+        feedbackButton.onclick = function () {
+          window.location.href = '../conclusao/conclusão-florestatemp.html';
+        };
       } else {
-        if (destino === 'correto') {
-          window.location.href = '../conclusao/conclusão-florestatemp.html'; 
-        } else {
-          window.location.href = '../quiz1/primeira-página-florestatemp.html'; 
-        }
+        feedbackContainer.className = 'feedback-container feedback-incorreto';
+        feedbackTitle.textContent = "Incorreto!";
+        feedbackText.textContent = "Poxa, não foi dessa vez. Que tal revisar o conteúdo sobre a flora local?";
+        feedbackButton.textContent = "Tentar Novamente";
+        feedbackButton.onclick = function () {
+          window.location.href = '../quiz1/primeira-página-florestatemp.html';
+        };
       }
-    }
-
-    requestAnimationFrame(animateProgress);
+    });
   </script>
 
 </body>

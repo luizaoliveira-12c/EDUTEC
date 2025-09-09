@@ -1,138 +1,109 @@
+/* Estilos Globais */
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
 
+/* Corpo da Página */
 body {
-  margin: 0;
-  background-color: #f8f8e8;
-  color: #014421;
-  background: url('./floresta\ temperada\ fundo.jpg') no-repeat center center fixed;
-  background-size: cover;
   color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden; /* Evitar barras de rolagem desnecessárias */
 }
 
-/* Cores */
-:root {
-  --verde-escuro: #1e402f;
-  --braco-fundo: #f7fbea;
-  --verde-texto: #024e49;
-  --verde: #2e4e43;
-  --amarelo: #f4ffb4;
-  --verde-mt-claro: #335249;
-  --verde-box: #3a6651;
-  --verde-claro: #c6d6b0;
-}
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: blur(3px) brightness(0.7);
+  } 
 
+/* Cabeçalho */
 header {
-  background-color: #ce4e13;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem 3.75rem;
-}
-
-.header-left, .header-center, .header-right {
-  display: flex;
-  align-items: center;
-}
-
-.header-left {
-  flex: 1;
-}
-
-.header-center {
-  flex: 2;
-  justify-content: center;
-}
-
-.header-right {
-  flex: 2;
-  justify-content: flex-end;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  font-size: 1.875rem;
-}
-
-.logo img {
-  width: 1.75rem;
-  margin-right: 0.625rem;
-}
-
-.menu a {
-  color: #cccccc;
-  text-decoration: none;
-  margin: 0 1.5rem;
-  font-size: 0.9375rem;
-}
-
-.menu a:hover,
-.login:hover {
-  text-decoration: underline;
-}
-
-.login {
-  color: white;
-  text-decoration: none;
-  font-size: 0.875rem;
-}
-
-/* CONTEÚDO */
-.tundra-container {
-  max-width: 900px;
-  margin: 3rem auto;
-  padding: 0 2rem;
-  text-align: center;
   position: relative;
-  background: transparent;
-  z-index: 1;
+  z-index: 1000;
+  background-color: rgba(44, 60, 94, 0.5); /* Fundo semitransparente */
+  backdrop-filter: blur(5px); /* Efeito de desfoque no fundo */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Container Principal */
+.tundra-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative; /* Para posicionar o dino */
+}
+
+/* Mensagens */
+.mensagens {
+  background-color: rgba(10, 30, 50, 0.7);
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  backdrop-filter: blur(5px);
 }
 
 .mensagens p {
-  background-color: #ce4e13;
-  color: white;
-  display: inline-block;
-  padding: 1.2rem 3rem;
-  margin-bottom: 1.5rem;
-  border-radius: 8px;
-  font-size: 1.25rem;
-  line-height: 1.5;
-  max-width: 600px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin: 0;
 }
 
+/* Emblemas */
 .emblemas {
-  margin-top: 2rem;
   display: flex;
-  justify-content: center;
-  gap: 3.5rem;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .emblemas img {
-  width: 200px;
-  height: auto;
-  filter: brightness(0.4); /* escuro por padrão */
-  transition: filter 0.5s ease;
+  width: 180px;
+  height: 180px;
+  filter: brightness(0.3);
+  transition: filter 0.5s ease-in-out, transform 0.3s ease;
 }
 
-.emblemas img.ativo {
-  filter: brightness(1); /* aceso */
+.emblemas img:hover {
+    transform: scale(1.1);
 }
 
+/* Dino */
 .dino {
   position: fixed;
-  bottom: 1.25rem;
-  left: 1.25rem;
-  width: 15.625rem;
+  bottom: 20px;
+  left: 20px;
+  width: 250px;
   height: auto;
-  z-index: 1000;
+  z-index: 500;
+  animation: floatDino 4s ease-in-out infinite;
+}
+
+@keyframes floatDino {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }

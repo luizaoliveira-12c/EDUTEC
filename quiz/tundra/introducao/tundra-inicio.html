@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <img src="../imgs/fundotundra.png" alt="Fundo" class="bg-image">
+  <img src="../imgs/tundrafundo.png" alt="Fundo" class="bg-image">
 
   <header>
     <div class="cabecalho-esquerda">
@@ -48,16 +48,16 @@
       <img src="../../savana/imgs/savana-emblema.png" alt="Emblema Savana" />
     </div>
 
-    <img src="../../tropical/imgs/dino-acenando.png" alt="Dino lendo livro" class="dino" />
+    <img src="../imgs/dino-com-frio.png" alt="Dino lendo livro" class="dino" />
     
   </main>
 
   <script>
     // Espera 2 segundos para o usuário ler a mensagem
     setTimeout(() => {
-      const primeiroEmblema = document.querySelector(".emblemas img");
+      const primeiroEmblema = document.querySelector(".primeiro-emblema");
       if (primeiroEmblema) {
-        // Acende o emblema
+        // Acende o emblema da Floresta Tropical
         primeiroEmblema.style.filter = "brightness(1)";
         
         // Espera mais 3 segundos e então redireciona

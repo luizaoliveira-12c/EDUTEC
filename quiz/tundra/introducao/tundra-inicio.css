@@ -55,10 +55,10 @@ header {
 /* Mensagens */
 .mensagens {
   background-color: rgba(10, 30, 50, 0.7);
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   border-radius: 15px;
   margin-bottom: 2rem;
-  max-width: 600px;
+  max-width: 800px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   backdrop-filter: blur(5px);
@@ -78,18 +78,14 @@ header {
 }
 
 .emblemas img {
-  width: 100px;
-  height: 100px;
+  width: 180px;
+  height: 180px;
   filter: brightness(0.3);
   transition: filter 0.5s ease-in-out, transform 0.3s ease;
 }
 
 .emblemas img:hover {
     transform: scale(1.1);
-}
-
-.emblemas .primeiro-emblema {
-  filter: brightness(1); /* O primeiro emblema já é colorido */
 }
 
 /* Dino */

@@ -4,76 +4,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BioTech - Resposta Tundra</title>
-  <link rel="stylesheet" href="primeira-página-tundra-resposta.css" />
-  <link rel="stylesheet" href="../../../header.css" />
+  <title>BioTech - Quiz Tundra - Resposta</title>
+  <link rel="stylesheet" href="./primeira-página-tundra-resposta.css" />
+  <link rel="stylesheet" href="../../../header.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
 </head>
 
 <body>
-
-  <header>
-    <div class="cabecalho-esquerda">
-      <a href="../../../index.html" class="logo-link">
-        <div class="logo">
-          <img src="../../../home/imgs/leaf.png" alt="Logo" />
-          <span>BioTech</span>
+    <header>
+        <div class="cabecalho-esquerda">
+          <a href="../../../index.html" class="logo-link">
+            <div class="logo">
+              <img src="../../../home/imgs/leaf.png" alt="Logo" />
+              <span>BioTech</span>
+            </div>
+          </a>
         </div>
-      </a>
-    </div>
+    
+        <div class="cabecalho-centro">
+          <nav class="menu">
+            <a href="../../../conteudo/tundra/tundra.html">Conteúdo</a>
+            <a href="../../../inicio-quiz/inicio-quiz/quiz.html">Quiz</a>
+            <a href="../../../mapa/mapa.html">Mapa</a>
+          </nav>
+        </div>
+      </header>
 
-    <div class="cabecalho-centro">
-      <nav class="menu">
-        <a href="../../../conteudo/tundra/tundra.html">Conteúdo</a>
-        <a href="../../../inicio-quiz/inicio-quiz/quiz.html">Quiz</a>
-        <a href="../../../mapa/mapa.html">Mapa</a>
-      </nav>
-    </div>
+      <img src="../imgs/tundrafundo.png" alt="" class="bg-image">
 
-  </header>
-
-  <main class="quiz-container quiz-response">
-    <h2>Resposta</h2>
-    <p>Aqui vai a resposta correta</p>
-
-    <div class="progress-bar-bottom">
-      <div class="progress-bar-fill"></div>
-    </div>
-  </main>
+      <div class="card-container">
+        <div class="card">
+          <h2 id="resposta-titulo"></h2>
+          <p id="resposta-texto"></p>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill"></div>
+          </div>
+        </div>
+      </div>
 
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const destino = params.get('destino');
+    const urlParams = new URLSearchParams(window.location.search);
+    const destino = urlParams.get('destino'); 
 
-    const mensagem = document.querySelector('.quiz-response h2');
-    const resposta = document.querySelector('.quiz-response p');
-    const barra = document.querySelector('.progress-bar-fill');
+    const titulo = document.getElementById('resposta-titulo');
+    const texto = document.getElementById('resposta-texto');
 
     if (destino === 'correto') {
-      mensagem.textContent = 'Parabéns! Resposta correta!';
-      resposta.textContent = 'A resposta correta é: Invernos longos e frios, e verões curtos e frescos.';
+      titulo.textContent = 'Parabéns! Resposta correta!';
+      texto.textContent = 'A resposta correta é: Frio e seco';
     } else {
-      mensagem.textContent = 'Ops! Resposta incorreta.';
-      resposta.textContent = 'A resposta correta era: Invernos longos e frios, e verões curtos e frescos.';
+      titulo.textContent = 'Ops! Resposta incorreta.';
+      texto.textContent = 'A resposta correta era: Frio e seco';
     }
+    
+    const barra = document.querySelector('.progress-bar-fill');
+    const duracao = 5000; 
+    let inicio = null;
 
-    let duracao = 3000;
-    let inicio = performance.now();
+    function animarBarra(tempo) {
+      if (!inicio) inicio = tempo;
+      const decorrido = tempo - inicio;
+      const porcentagem = Math.min((decorrido / duracao) * 100, 100);
+      barra.style.width = porcentagem + '%';
 
-    function animarProgresso(tempoAtual) {
-      let progresso = Math.min(((tempoAtual - inicio) / duracao) * 100, 100);
-      barra.style.width = progresso + '%';
-
-      if (progresso < 100) {
-        requestAnimationFrame(animarProgresso);
+      if (decorrido < duracao) {
+        requestAnimationFrame(animarBarra);
       } else {
-        window.location.href = destino === 'correto'
-          ? '../quiz2/segunda-página-tundra.html'
-          : '../quiz1/primeira-página-tundra.html';
-      }
+          if (destino === 'correto') {
+            window.location.href = '../quiz2/segunda-página-tundra.html';
+          } else {
+            window.location.href = './primeira-página-tundra.html';
+          }
+        }
     }
 
-    requestAnimationFrame(animarProgresso);
+    requestAnimationFrame(animarBarra);
   </script>
-</body>
 
+</body>
 </html>

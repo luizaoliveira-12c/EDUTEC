@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BioTech - Quiz Floresta Tropical</title>
+  <title>BioTech - Quiz Floresta Temperada</title>
   <link rel="stylesheet" href="primeira-página-florestatemp.css" />
   <link rel="stylesheet" href="../../../header.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,20 +19,24 @@
 
   <header>
     <div class="cabecalho-esquerda">
+      <a href="../../../index.html" class="logo-link">
       <div class="logo">
         <img src="../../../home/imgs/leaf.png" alt="Logo" />
         <span>BioTech</span>
       </div>
+      </a>
     </div>
 
     <div class="cabecalho-centro">
       <nav class="menu">
-        <a href="../../../conteudo/floresta-temperada/floresta-temperada.html">Conteúdo</a>
+        <a href="../../../conteudo/temperada/temperada.html">Conteúdo</a>
         <a href="../../../inicio-quiz/inicio-quiz/quiz.html">Quiz</a>
         <a href="../../../mapa/mapa.html">Mapa</a>
       </nav>
     </div>
   </header>
+
+  <img src="../imgs/floresta temperada fundo.jpg" alt="Fundo" class="bg-image" />
 
   <main class="quiz-container">
     <div class="quiz-header">
@@ -40,28 +44,28 @@
       <div class="quiz-progress">1/3</div>
     </div>
 
-    <img src="../imgs/florestatempimg1.png" alt="Floresta Tropical" class="quiz-image" />
+    <img src="../imgs/florestatempimg1.png" alt="Floresta Temperada" class="quiz-image" />
 
     <div class="quiz-question">
-      Qual é a principal característica do clima na Floresta Temperada?
+        Qual é a principal característica da floresta temperada?
     </div>
 
     <div class="quiz-options">
-
-      <button class="option-btn incorrect"
-        onclick="window.location.href='primeira-página-florestatemp-resposta-nova.html?destino=incorreto'">
-        Quente o ano todo
-      </button>
-
-      <button class="option-btn correct"
-        onclick="window.location.href='primeira-página-florestatemp-resposta-nova.html?destino=correto'">
-        Inverno frio e verões moderadamente quentes
+      <!-- Opções -->
+      <button class="option-btn correct" onclick="window.location.href='./primeira-página-florestatemp-resposta-nova.html?destino=correto'">
+        As quatro estações do ano bem definidas
       </button>
 
       <button class="option-btn incorrect"
-        onclick="window.location.href='primeira-página-florestatemp-resposta-nova.html?destino=incorreto'">
-        Clima árido e seco
+        onclick="window.location.href='./primeira-página-florestatemp-resposta-nova.html?destino=incorreto'">
+        Altas temperaturas o ano todo
       </button>
+
+      <button class="option-btn incorrect"
+        onclick="window.location.href='./primeira-página-florestatemp-resposta-nova.html?destino=incorreto'">
+        Vegetação rasteira e poucas árvores
+      </button>
+
     </div>
 
     <img src="../imgs/dino-na-floresta-temperada.png" alt="Dino" class="quiz-dino" />

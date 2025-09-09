@@ -4,90 +4,36 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
   }
+
+  .bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
   
   body {
-    background: url('./floresta\ temperada\ fundo.jpg') no-repeat center center fixed;
-    background-size: cover;
+    margin: 0;
+    overflow: hidden;
     color: white;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
   }
   
-  header {
-    background-color: #ce4e13;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.25rem 3.75rem;
-    position: relative;
-    z-index: 1000;
-  }
-  
-  .header-left,
-  .header-center,
-  .header-right {
-    display: flex;
-    align-items: center;
-  }
-  
-  .header-left {
-    flex: 1;
-  }
-  
-  .header-center {
-    flex: 2;
-    justify-content: center;
-  }
-  
-  .header-right {
-    flex: 2;
-    justify-content: flex-end;
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    font-size: 1.875rem;
-  }
-  
-  .logo img {
-    width: 1.75rem;
-    margin-right: 0.625rem;
-  }
-  
-  .menu a {
-    color: #CCCCCC;
-    text-decoration: none;
-    margin: 0 0.9375rem;
-    font-size: 0.9375rem;
-  }
-  
-  .menu a:hover {
-    text-decoration: underline;
-  }
-  
-  .login {
-    color: white;
-    text-decoration: none;
-    font-size: 0.875rem;
-  }
-  
-  .login:hover {
-    text-decoration: underline;
-  }
-  
   .quiz-container {
     width: 80%;
     max-width: 62.5rem;
-    margin: 8rem auto 4rem auto;
+    margin: 7.5rem auto;
     background-color: rgba(30, 64, 47, 0.3);
     border-radius: 0.75rem;
     padding: 3.125rem;
     position: relative;
     text-align: center;
+    z-index: 1;
   }
   
   .quiz-header {
@@ -162,4 +108,3 @@
     height: auto;
     z-index: 1000;
   }
-  

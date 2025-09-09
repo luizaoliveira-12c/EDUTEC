@@ -1,0 +1,85 @@
+/* Estilos Globais e Imagem de Fundo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  overflow: hidden;
+}
+
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: blur(3px) brightness(0.7);
+}
+
+/* Container Principal */
+.container-final {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Caixa de Conclusão */
+.box-final {
+  background-color: rgba(10, 30, 50, 0.85); /* Azul escuro, frio */
+  color: #e0f2ff; /* Azul bem claro, quase branco */
+  padding: 3rem 4rem;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(224, 242, 255, 0.25); /* Borda azul clara semitransparente */
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInScale 0.8s 0.2s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.titulo-final {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.texto-box-final p {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.emblema-final {
+  width: 150px;
+  height: auto;
+  margin: 0 auto 1rem; /* Centralizado */
+  filter: brightness(0.4); /* Emblema apagado */
+  transition: filter 2s ease-in-out;
+}
+
