@@ -56,10 +56,10 @@
 
     if (destino === 'correto') {
       titulo.textContent = 'Parabéns! Resposta correta!';
-      texto.textContent = 'A resposta correta é: Desmatamento e queimadas.';
+      texto.textContent = 'A resposta correta é: América do Sul.';
     } else {
       titulo.textContent = 'Ops! Resposta incorreta.';
-      texto.textContent = 'A resposta correta era: Desmatamento e queimadas.';
+      texto.textContent = 'A resposta correta era: América do Sul.';
     }
     
     const barra = document.querySelector('.progress-bar-fill');
@@ -75,7 +75,11 @@
       if (decorrido < duracao) {
         requestAnimationFrame(animarBarra);
       } else {
-          window.location.href = '../conclusão/conclusão-trop.html';
+          if (destino === 'correto') {
+            window.location.href = '../conclusão/conclusão-trop.html';
+          } else {
+            window.location.href = '../quiz1/primeirapagtropquiz.html';
+          }
         }
     }
 

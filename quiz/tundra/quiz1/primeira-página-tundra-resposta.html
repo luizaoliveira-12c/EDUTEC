@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BioTech - Resposta Tundra</title>
-  <link rel="stylesheet" href="segunda-página-tundra-resposta.css" />
+  <link rel="stylesheet" href="primeira-página-tundra-resposta.css" />
   <link rel="stylesheet" href="../../../header.css" />
 </head>
 
@@ -42,40 +42,38 @@
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const destino = params.get('destino'); 
-  
+    const destino = params.get('destino');
+
     const mensagem = document.querySelector('.quiz-response h2');
     const resposta = document.querySelector('.quiz-response p');
     const barra = document.querySelector('.progress-bar-fill');
-  
+
     if (destino === 'correto') {
       mensagem.textContent = 'Parabéns! Resposta correta!';
-      resposta.textContent = 'A resposta correta é: Perto dos polos norte e sul.';
+      resposta.textContent = 'A resposta correta é: Invernos longos e frios, e verões curtos e frescos.';
     } else {
       mensagem.textContent = 'Ops! Resposta incorreta.';
-      resposta.textContent = 'A resposta correta era: Perto dos polos norte e sul.';
+      resposta.textContent = 'A resposta correta era: Invernos longos e frios, e verões curtos e frescos.';
     }
-  
+
     let duracao = 3000;
     let inicio = performance.now();
-  
+
     function animarProgresso(tempoAtual) {
       let progresso = Math.min(((tempoAtual - inicio) / duracao) * 100, 100);
       barra.style.width = progresso + '%';
-  
+
       if (progresso < 100) {
         requestAnimationFrame(animarProgresso);
       } else {
-        if (destino === 'correto') {
-          window.location.href = '../quiz3/terceira-página-tundra.html';
-        } else {
-          window.location.href = './segunda-página-tundra.html';
-        }
+        window.location.href = destino === 'correto'
+          ? '../quiz2/segunda-página-tundra.html'
+          : '../quiz1/primeira-página-tundra.html';
       }
     }
 
     requestAnimationFrame(animarProgresso);
-  </script>  
+  </script>
 </body>
 
 </html>

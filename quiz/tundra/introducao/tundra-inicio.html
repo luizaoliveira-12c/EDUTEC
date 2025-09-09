@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BioTech - Seu assistente de estudos</title>
+  <title>BioTech - Bem vindo a Tundra!</title>
   <link rel="stylesheet" href="tundra-inicio.css" />
   <link rel="stylesheet" href="../../../header.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,14 +12,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
 </head>
 
-<body style="background: url('../imgs/tundrafundo.png') no-repeat center center fixed; background-size: cover;">
+<body>
+  <img src="../imgs/fundotundra.png" alt="Fundo" class="bg-image">
 
   <header>
     <div class="cabecalho-esquerda">
-      <div class="logo">
-        <img src="../../../home/imgs/leaf.png" alt="Logo" />
-        <span>BioTech</span>
-      </div>
+      <a href="../../../index.html" class="logo-link">
+        <div class="logo">
+          <img src="../../../home/imgs/leaf.png" alt="Logo" />
+          <span>BioTech</span>
+        </div>
+      </a>
     </div>
 
     <div class="cabecalho-centro">
@@ -50,13 +53,17 @@
   </main>
 
   <script>
+    // Espera 2 segundos para o usuário ler a mensagem
     setTimeout(() => {
       const primeiroEmblema = document.querySelector(".emblemas img");
       if (primeiroEmblema) {
+        // Acende o emblema
         primeiroEmblema.style.filter = "brightness(1)";
         
+        // Espera mais 3 segundos e então redireciona
         setTimeout(() => {
-          window.location.href = "../quiz1/primeira-página-tundra.html"; }, 1000);
+          window.location.href = "../quiz1/primeira-página-tundra.html";
+        }, 3000);
       }
     }, 2000);
   </script>

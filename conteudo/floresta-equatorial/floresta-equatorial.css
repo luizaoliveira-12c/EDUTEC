@@ -1,106 +1,196 @@
-body {
-  font-family: 'Open Sans', sans-serif;
-  background-color: #f7fbea;
-  color: #333;
-  margin: 0;
+/* Reset e configurações globais */
+* {
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.cabecalho-centro a {
-  font-family: 'Montserrat', sans-serif;
-  color: #fff;
+body {
+  margin: 0;
+  background-color: #f8f8e8;
+  color: #014421;
+}
+
+a {
   text-decoration: none;
-  margin: 0 15px;
-  font-weight: 600;
 }
 
-main {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+/* Variáveis globais */
+:root {
+  --verde-escuro: #1e402f;
+  --branco-fundo: #f7fbea;
+  --verde-texto: #024e49;
+  --verde: #2e4e43;
+  --amarelo: #f4ffb4;
+  --verde-muito-claro: #335249;
+  --verde-caixa: #3a6651;
+  --verde-claro: #c6d6b0;
 }
 
+/* Título principal */
 .titulo {
+  font-weight: 700;
+  font-size: 3.5rem;
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.5rem;
-  color: #1e402f;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
+  margin: 30px 0 30px;
+  color: var(--verde-escuro);
 }
 
+/* Fundo de destaque atrás dos cartões */
+.fundo-destaque {
+  position: absolute;
+  top: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 260px;
+  background-color: var(--verde-escuro);
+  border-radius: 0;
+  z-index: 0;
+  box-shadow: 3px 0 7px #88916b inset, -3px 0 7px #88916b inset;
+}
+
+/* Container dos cartões */
 .cartoes-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
   position: relative;
-}
-
-.cartao {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.cartao:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.icone-container {
-  background-color: #1e402f;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  max-width: 2280px;
+  margin: 0 auto 30px;
+  padding: 0 60px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin: 0 auto 1rem;
+  gap: 22px;
+  flex-wrap: wrap;
 }
 
-.icone-container img {
-  width: 30px;
-  height: 30px;
+/* Cartão individual */
+.cartao {
+  position: relative;
+  background-color: var(--branco-fundo);
+  border: 1.5px solid #bfc2a7;
+  border-radius: 12px;
+  width: 320px;
+  padding: 28px 25px 25px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  box-shadow: 1px 1px 2px #cbcdb1;
+  min-height: 480px;
 }
 
-.tema {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.5rem;
-  color: #1e402f;
-  margin-bottom: 0.5rem;
+/* Cabeçalho do cartão */
+.cartao h2 {
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 1.4rem;
+  color: var(--verde-texto);
+  line-height: 1.3;
+  letter-spacing: 0.4px;
 }
 
+/* Parágrafo do cartão */
 .cartao p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
+  font-size: 0.96rem;
+  line-height: 1.5;
+  color: #2c2c2c;
+  text-align: left;
+  margin-bottom: 10px;
+  user-select: text;
+  flex-grow: 1;
+  letter-spacing: 0;
+  word-spacing: normal;
 }
 
+/* Imagem dentro do cartão */
 .cartao img {
-  max-width: 100%;
+  margin-top: 20px;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
   border-radius: 10px;
 }
 
-.botao-voltar-pagina, .botao-proxima-pagina {
-  background-color: #1e402f;
-  color: #fff;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-  margin-top: 2rem;
+/* Container dos botões */
+.botoes-container {
+  max-width: 1380px;
+  margin: 0 auto 40px;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.botao-voltar-pagina:hover, .botao-proxima-pagina:hover {
-  background-color: #3a6651;
-  transform: translateY(-2px);
+/* Botões padrão */
+.botao-voltar,
+.botao-proximo {
+  background-color: #bfc2a7;
+  border: none;
+  padding: 12px 26px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #3f3f3f;
+  box-shadow: 1px 1px 4px #d9d9d9;
+  transition: background-color 0.3s ease;
+}
+
+/* Botões de navegação fixos */
+.botao-proxima-pagina,
+.botao-voltar-pagina {
+  position: fixed;
+  bottom: 30px;
+  background-color: #bfc2a7;
+  border: none;
+  padding: 12px 26px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #3f3f3f;
+  box-shadow: 1px 1px 4px #d9d9d9;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
 }
 
 .botao-proxima-pagina {
-  float: right;
+  right: 30px;
+}
+
+.botao-voltar-pagina {
+  left: 30px;
+}
+
+/* Efeitos hover dos botões */
+.botao-voltar:hover,
+.botao-proximo:hover,
+.botao-proxima-pagina:hover,
+.botao-voltar-pagina:hover {
+  background-color: rgb(48, 97, 72);
+  color: white;
+}
+
+/* Ícone dentro do cartão */
+.icone-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  height: 50px;
+}
+
+.icone-container img {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+}
+
+/* Tema do cartão (possivelmente título menor ou subtítulo) */
+.tema {
+  height: 25px;
+  align-items: center;
+  text-align: center;
 }
