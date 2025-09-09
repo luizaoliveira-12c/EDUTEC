@@ -40,6 +40,16 @@
       <img src="../imgs/emblemaflorestatemp.png" alt="Emblema Floresta Temperada" class="emblema-final" />
     </section>
   </main>
-
+<script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const emblema = document.querySelector('.emblema-final');
+        if (emblema) {
+          emblema.style.filter = 'brightness(1)';
+        }
+       window.location.href = '../../savana/introducao/savana.inicio.html'
+      }, 5000);
+    });
+  </script>
 </body>
 </html>

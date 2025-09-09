@@ -41,9 +41,20 @@
         <p>Você concluiu o quiz sobre a Floresta Tropical e ganhou um novo emblema!</p>
       </div>
       <img src="../imgs/florestatrop-emblema.png" alt="Emblema Floresta Tropical" class="emblema-final">
-      <a href="../../../index.html" class="botao-final">Voltar para o Início</a>
     </div>
   </main>
+
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const emblema = document.querySelector('.emblema-final');
+        if (emblema) {
+          emblema.style.filter = 'brightness(1)';
+        }
+       window.location.href = '../../../conclusao/emblemas/todos-os-emblemas.html'
+      }, 5000);
+    });
+  </script>
 
 </body>
 
