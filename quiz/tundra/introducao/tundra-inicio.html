@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioTech - Seu assistente de estudos</title>
+  <link rel="stylesheet" href="tundra-inicio.css" />
+  <link rel="stylesheet" href="../../../header.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+</head>
+
+<body style="background: url('../imgs/tundrafundo.png') no-repeat center center fixed; background-size: cover;">
+
+  <header>
+    <div class="cabecalho-esquerda">
+      <div class="logo">
+        <img src="../../../home/imgs/leaf.png" alt="Logo" />
+        <span>BioTech</span>
+      </div>
+    </div>
+
+    <div class="cabecalho-centro">
+      <nav class="menu">
+        <a href="../../../conteudo/tundra/tundra.html">Conteúdo</a>
+        <a href="../../../inicio-quiz/inicio-quiz/quiz.html">Quiz</a>
+        <a href="../../../mapa/mapa.html">Mapa</a>
+      </nav>
+    </div>
+
+  </header>
+
+  <main class="tundra-container">
+    <div class="mensagens">
+      <p>Bem vindo a Tundra! <br />Parabéns por ter chegado até aqui!</p>
+      <p>Até agora você conquistou 1 emblema! Faltam apenas 3!</p>
+    </div>
+
+    <div class="emblemas">
+      <img src="../../tropical/imgs/florestatrop-emblema.png" alt="Emblema Floresta Tropical" class="primeiro-emblema" />
+      <img src="../imgs/tundra-emblema.png" alt="Emblema Tundra" />
+      <img src="../../temperada/imgs/emblemaflorestatemp.png" alt="Emblema Floresta Temperada" />
+      <img src="../../savana/imgs/savana-emblema.png" alt="Emblema Savana" />
+    </div>
+
+    <img src="../../tropical/imgs/dino-acenando.png" alt="Dino lendo livro" class="dino" />
+    
+  </main>
+
+  <script>
+    setTimeout(() => {
+      const primeiroEmblema = document.querySelector(".emblemas img");
+      if (primeiroEmblema) {
+        primeiroEmblema.style.filter = "brightness(1)";
+        
+        setTimeout(() => {
+          window.location.href = "../quiz1/primeira-página-tundra.html"; }, 1000);
+      }
+    }, 2000);
+  </script>
+  
+  
+</body>
+
+</html>

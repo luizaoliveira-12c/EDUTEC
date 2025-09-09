@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioTech - Resposta Tundra</title>
+  <link rel="stylesheet" href="terceira-página-tundra-resposta.css" />
+  <link rel="stylesheet" href="../../../header.css" />
+</head>
+<body>
+
+  <header>
+    <div class="cabecalho-esquerda">
+      <a href="../../../index.html" class="logo-link">
+        <div class="logo">
+          <img src="../../../home/imgs/leaf.png" alt="Logo" />
+          <span>BioTech</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="cabecalho-centro">
+      <nav class="menu">
+        <a href="../../../conteudo/tundra/tundra.html">Conteúdo</a>
+        <a href="../../../inicio-quiz/inicio-quiz/quiz.html">Quiz</a>
+        <a href="../../../mapa/mapa.html">Mapa</a>
+      </nav>
+    </div>
+
+  </header>
+
+  <main class="quiz-container quiz-response">
+    <h2>Resposta</h2>
+    <p>Aqui vai a resposta correta</p>
+
+    <div class="progress-bar-bottom">
+      <div class="progress-bar-fill"></div>
+    </div>
+  </main>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const destino = urlParams.get('destino'); 
+
+    const messageEl = document.querySelector('.quiz-response h2');
+    const answerEl = document.querySelector('.quiz-response p');
+
+    if (destino === 'correto') {
+      messageEl.textContent = 'Parabéns! Resposta correta!';
+      answerEl.textContent = 'A resposta correta é: Permafrost.';
+    } else {
+      messageEl.textContent = 'Ops! Resposta incorreta.';
+      answerEl.textContent = 'A resposta correta era: Permafrost.';
+    }
+
+    const progressBarFill = document.querySelector('.progress-bar-fill');
+    const duration = 3000; 
+    let start = null;
+
+    function animateProgress(timestamp) {
+      if (!start) start = timestamp;
+      const elapsed = timestamp - start;
+      const progressPercent = Math.min((elapsed / duration) * 100, 100);
+      progressBarFill.style.width = progressPercent + '%';
+
+      if (elapsed < duration) {
+        requestAnimationFrame(animateProgress);
+      } else {
+        if (destino === 'correto') {
+          window.location.href = '../conclusao/conclusão-tundra.html'; 
+        } else {
+          window.location.href = 'terceira-página-tundra.html'; 
+        }
+      }
+    }
+
+    requestAnimationFrame(animateProgress);
+  </script>
+
+</body>
+
+</html>

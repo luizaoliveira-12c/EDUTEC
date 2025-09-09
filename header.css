@@ -1,0 +1,80 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem 1rem 15rem;
+  background-color: #1e402f;
+  color: #f4ffb4;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  z-index: 10;
+}
+
+.cabecalho-esquerda {
+  flex: 1;
+}
+
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.logo img {
+  height: 2.5rem;
+}
+
+.logo span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f4ffb4;
+  line-height: 1;
+}
+
+.cabecalho-centro {
+  flex: 2;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.menu {
+  display: flex;
+  gap: 1.875rem;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #f4ffb4;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s;
+  line-height: 1;
+  padding: 0.3rem 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+
+.menu a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0.125rem;
+  bottom: -0.3125rem;
+  left: 50%;
+  background-color: #f4ffb4;
+  transition: width 0.3s, left 0.3s;
+}
+
+.menu a:hover {
+  color: #aeeebb;
+}
+
+.menu a:hover::after {
+  width: 100%;
+  left: 0;
+}

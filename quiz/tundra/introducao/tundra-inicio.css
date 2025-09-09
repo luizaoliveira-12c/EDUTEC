@@ -1,0 +1,76 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    color: #014421;
+    background: url('tundrafundo.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tundra-container {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 2rem; 
+    text-align: center;
+    position: relative;
+    background: transparent;
+    z-index: 1; 
+  }
+
+  .mensagens p {
+    background-color: #2c3c5e;
+    color: white;
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    font-size: 1.25rem; 
+    line-height: 1.5;
+    max-width: 600px; 
+  }
+
+    .emblemas {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        gap: 3.5rem;  
+    }
+  
+  .emblemas img {
+    width: 200px;            
+    height: auto;
+    filter: brightness(0.4);
+    transition: filter 0.5s ease;
+  }
+
+  .emblemas img:first-child {
+    filter: brightness(0);
+    transition: filter 0.3s ease;
+  }
+
+  .dino {
+    position: fixed;
+    bottom: 1.25rem; 
+    left: 1.25rem;   
+    width: 15.625rem; 
+    height: auto;
+    z-index: 1000;
+  }
+
+  .bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+  }

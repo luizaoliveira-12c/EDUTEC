@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioTech - Seu assistente de estudos</title>
+  <link rel="stylesheet" href="florestatemp-inicio.css" />
+  <link rel="stylesheet" href="../../../header.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+  <header>
+    <div class="cabecalho-esquerda">
+      <div class="logo">
+        <img src="../../../home/imgs/leaf.png" alt="Logo" />
+        <span>BioTech</span>
+      </div>
+    </div>
+
+    <div class="cabecalho-centro">
+      <nav class="menu">
+        <a href="../../../conteudo/floresta-temperada/floresta-temperada.html">Conteúdo</a>
+        <a href="../../../inicio-quiz/inicio-quiz/quiz.html">Quiz</a>
+        <a href="../../../mapa/mapa.html">Mapa</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="tundra-container">
+    <div class="mensagens">
+      <p>Bem vindo à Floresta Temperada!! <br />Parabéns por ter chegado até aqui!</p>
+      <p>Até agora você conquistou 2 emblemas! Faltam apenas 2!</p>
+    </div>
+
+    <div class="emblemas">
+      <img src="../imgs/florestatrop-emblema.png" alt="Emblema Floresta Tropical" class="emblema ativo" />
+      <img src="../imgs/tundra-emblema.png" alt="Emblema Tundra" class="emblema" />
+      <img src="../imgs/emblemaflorestatemp.png" alt="Emblema Floresta Temperada" class="emblema" />
+      <img src="../imgs/savana-emblema.png" alt="Emblema Savana" class="emblema" />
+    </div>
+
+    <img src="../imgs/dino-na-floresta-temperada.png" alt="Dino lendo livro" class="dino" />
+  </main>
+
+  <script>
+    setTimeout(() => {
+      const emblemas = document.querySelectorAll(".emblemas img");
+      if (emblemas.length > 1) {
+        emblemas[1].classList.add("ativo"); // Acende o segundo emblema (Tundra)
+      }
+
+      setTimeout(() => {
+        window.location.href = "../quiz1/primeira-página-florestatemp.html";
+      }, 1000);
+    }, 2000);
+  </script>
+
+</body>
+
+</html>

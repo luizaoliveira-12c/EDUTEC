@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioTech - Quiz Floresta Tropical - Resposta</title>
+  <link rel="stylesheet" href="./quiztrop2resposta.css" />
+  <link rel="stylesheet" href="../../../header.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+    <header>
+        <div class="cabecalho-esquerda">
+          <a href="../../../index.html" class="logo-link">
+            <div class="logo">
+              <img src="../../../home/imgs/leaf.png" alt="Logo" />
+              <span>BioTech</span>
+            </div>
+          </a>
+        </div>
+    
+        <div class="cabecalho-centro">
+          <nav class="menu">
+            <a href="../../../conteudo/tundra/tundra.html">Conteúdo</a>
+            <a href="../../../inicio-quiz/inicio-quiz/quiz.html">Quiz</a>
+            <a href="../../../mapa/mapa.html">Mapa</a>
+          </nav>
+        </div>
+      </header>
+
+      <img src="../imgs/fundoflorestatrop.png" alt="" class="bg-image">
+
+      <div class="card-container">
+        <div class="card">
+          <h2 id="resposta-titulo"></h2>
+          <p id="resposta-texto"></p>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill"></div>
+          </div>
+        </div>
+      </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const destino = urlParams.get('destino'); 
+
+    const titulo = document.getElementById('resposta-titulo');
+    const texto = document.getElementById('resposta-texto');
+
+    if (destino === 'correto') {
+      titulo.textContent = 'Parabéns! Resposta correta!';
+      texto.textContent = 'A resposta correta é: Onça-pintada.';
+    } else {
+      titulo.textContent = 'Ops! Resposta incorreta.';
+      texto.textContent = 'A resposta correta era: Onça-pintada.';
+    }
+    
+    const barra = document.querySelector('.progress-bar-fill');
+    const duracao = 5000; 
+    let inicio = null;
+
+    function animarBarra(tempo) {
+      if (!inicio) inicio = tempo;
+      const decorrido = tempo - inicio;
+      const porcentagem = Math.min((decorrido / duracao) * 100, 100);
+      barra.style.width = porcentagem + '%';
+
+      if (decorrido < duracao) {
+        requestAnimationFrame(animarBarra);
+      } else {
+          if (destino === 'correto') {
+            window.location.href = '../quiz3/quiztrop3.html';
+          } else {
+            window.location.href = './quiztrop2.html';
+          }
+        }
+    }
+
+    requestAnimationFrame(animarBarra);
+  </script>
+
+</body>
+</html>

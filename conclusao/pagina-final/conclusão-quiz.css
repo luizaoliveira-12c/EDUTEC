@@ -1,0 +1,152 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --verde-escuro: #1e402f;
+  --braco-fundo: #f7fbea;
+  --verde-texto: #024e49;
+  --verde: #2e4e43;
+  --amarelo: #f4ffb4;
+  --verde-mt-claro: #335249;
+  --verde-box: #3a6651;
+  --verde-claro: #c6d6b0;
+}
+
+/* ----------- BODY ----------- */
+body {
+  margin: 0;
+  background: url("conclusão\ fundo.png") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ----------- HEADER ----------- */
+header {
+  background-color: var(--verde-escuro);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 3.75rem;
+}
+
+.header-left,
+.header-center,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.header-center {
+  flex: 2;
+  justify-content: center;
+}
+
+.header-right {
+  flex: 2;
+  justify-content: flex-end;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.875rem;
+}
+
+.logo img {
+  width: 1.75rem;
+  margin-right: 0.625rem;
+}
+
+.menu a {
+  color: #cccccc;
+  text-decoration: none;
+  margin: 0 0.9375rem;
+  font-size: 0.9375rem;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.login {
+  color: white;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.login:hover {
+  text-decoration: underline;
+}
+
+/* ----------- CONTEÚDO CENTRAL ----------- */
+.conclusao-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+.conteudo-centro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mensagens {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.msg {
+  background-color: var(--verde-box);
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  color: white;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+}
+
+/* Botão Voltar */
+.voltar {
+  background-color: var(--verde-escuro);
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.voltar:hover {
+  background-color: #163020;
+}
+
+/* Jacaré agora fica na esquerda */
+.jacare {
+  position: absolute;
+  top: 60%;     /* um pouco abaixo do botão */
+  left: 15%;    /* encostado na esquerda */
+  transform: translateY(-50%);
+}
+
+.jacare img {
+  width: 600px; /* mantém ele grande */
+}

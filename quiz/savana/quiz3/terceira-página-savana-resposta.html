@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioTech - Resposta Savana</title>
+  <link rel="stylesheet" href="terceira-página-savana-resposta.css" />
+  <link rel="stylesheet" href="../../../header.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+
+  <header>
+    <div class="cabecalho-esquerda">
+      <a href="../../../index.html" class="logo-link">
+        <div class="logo">
+          <img src="../../../home/imgs/leaf.png" alt="Logo" />
+          <span>BioTech</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="cabecalho-centro">
+      <nav class="menu">
+        <a href="../../../conteudo/savana/savana.html">Conteúdo</a>
+        <a href="../../../inicio-quiz/inicio-quiz/quiz.html">Quiz</a>
+        <a href="../../../mapa/mapa.html">Mapa</a>
+      </nav>
+    </div>
+
+  </header>
+
+  <main class="quiz-container quiz-response">
+    <h2>Resposta</h2>
+    <p>Aqui vai a resposta correta</p>
+
+    <div class="progress-bar-bottom">
+      <div class="progress-bar-fill"></div>
+    </div>
+  </main>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const destino = urlParams.get('destino'); 
+
+    const messageEl = document.querySelector('.quiz-response h2');
+    const answerEl = document.querySelector('.quiz-response p');
+
+    if (destino === 'correto') {
+      messageEl.textContent = 'Parabéns! Resposta correta!';
+      answerEl.textContent = 'A resposta correta é: Gramíneas, arbustos e árvores espaçadas.';
+    } else {
+      messageEl.textContent = 'Ops! Resposta incorreta.';
+      answerEl.textContent = 'A resposta correta era: Gramíneas, arbustos e árvores espaçadas.';
+    }
+
+    const progressBarFill = document.querySelector('.progress-bar-fill');
+    const duration = 3000; 
+    let start = null;
+
+    function animateProgress(timestamp) {
+      if (!start) start = timestamp;
+      const elapsed = timestamp - start;
+      const progressPercent = Math.min((elapsed / duration) * 100, 100);
+      progressBarFill.style.width = progressPercent + '%';
+
+      if (elapsed < duration) {
+        requestAnimationFrame(animateProgress);
+      } else {
+        if (destino === 'correto') {
+          window.location.href = '../../temperada/conclusao/conclusão-florestatemp.html'; 
+        } else {
+          window.location.href = '../quiz1/primeira-página-savana.html'; 
+        }
+      }
+    }
+
+    requestAnimationFrame(animateProgress);
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #f8f8e8;
+  color: #014421;
+  background: url('./floresta\ temperada\ fundo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cores */
+:root {
+  --verde-escuro: #1e402f;
+  --braco-fundo: #f7fbea;
+  --verde-texto: #024e49;
+  --verde: #2e4e43;
+  --amarelo: #f4ffb4;
+  --verde-mt-claro: #335249;
+  --verde-box: #3a6651;
+  --verde-claro: #c6d6b0;
+}
+
+header {
+  background-color: #ce4e13;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 3.75rem;
+}
+
+.header-left, .header-center, .header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.header-center {
+  flex: 2;
+  justify-content: center;
+}
+
+.header-right {
+  flex: 2;
+  justify-content: flex-end;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.875rem;
+}
+
+.logo img {
+  width: 1.75rem;
+  margin-right: 0.625rem;
+}
+
+.menu a {
+  color: #cccccc;
+  text-decoration: none;
+  margin: 0 1.5rem;
+  font-size: 0.9375rem;
+}
+
+.menu a:hover,
+.login:hover {
+  text-decoration: underline;
+}
+
+.login {
+  color: white;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+/* CONTEÚDO */
+.tundra-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+  text-align: center;
+  position: relative;
+  background: transparent;
+  z-index: 1;
+}
+
+.mensagens p {
+  background-color: #ce4e13;
+  color: white;
+  display: inline-block;
+  padding: 1.2rem 3rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+.emblemas {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 3.5rem;
+}
+
+.emblemas img {
+  width: 200px;
+  height: auto;
+  filter: brightness(0.4); /* escuro por padrão */
+  transition: filter 0.5s ease;
+}
+
+.emblemas img.ativo {
+  filter: brightness(1); /* aceso */
+}
+
+.dino {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  width: 15.625rem;
+  height: auto;
+  z-index: 1000;
+}

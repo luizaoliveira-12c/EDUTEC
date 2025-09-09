@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioTech - Seu assistente de estudos</title>
+  <link rel="stylesheet" href="todos-os-emblemas.css" />
+  <link rel="stylesheet" href="../../header.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  
+
+  <header>
+    <div class="cabecalho-esquerda">
+      <div class="logo">
+        <img src="../../home/imgs/leaf.png" alt="Logo" />
+        <span>BioTech</span>
+      </div>
+    </div>
+
+    <div class="cabecalho-centro">
+      <nav class="menu">
+        <a href="../../conteudo/savana/savana.html">Conteúdo</a>
+        <a href="../../inicio-quiz/inicio-quiz/quiz.html">Quiz</a>
+        <a href="../../mapa/mapa.html">Mapa</a>
+      </nav>
+    </div>
+
+  </header>
+
+  <main class="tundra-container">
+    <div class="mensagens">
+      <p>Parabéns! <br />Parabéns por ter chegado até aqui!</p>
+      <p>Você conquistou todos os emblemas!!</p>
+    </div>
+
+    <div class="emblemas">
+      <img src="../../quiz/tropical/imgs/florestatrop-emblema.png" alt="Emblema Floresta Tropical" class="emblema ativo" />
+      <img src="../../quiz/tundra/imgs/tundra-emblema.png" alt="Emblema Tundra" class="emblema ativo" />
+      <img src="../../quiz/temperada/imgs/florestatemp-emblema.png" alt="Emblema Floresta Temperada" class="emblema ativo" />
+      <img src="../../quiz/savana/imgs/savana-emblema.png" alt="Emblema Savana" class="emblema" />
+    </div>
+
+    <img src="../../quiz/savana/imgs/dino-na-savana.png" alt="Dino lendo livro" class="dino" />
+  </main>
+
+  <script>
+    setTimeout(() => {
+      const savana = document.querySelectorAll(".emblema")[3]; // 4º emblema
+      if (savana) {
+        savana.classList.add("ativo");
+      }
+
+      // Redireciona após 1 segundo
+      setTimeout(() => {
+        window.location.href = "../pagina-final/conclusão-quiz.html";
+      }, 1000);
+
+    }, 2000);
+  </script>
+
+</body>
+</html>

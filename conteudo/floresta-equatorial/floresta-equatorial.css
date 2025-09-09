@@ -1,0 +1,106 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f7fbea;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.cabecalho-centro a {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+}
+
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.titulo {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: #1e402f;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.cartoes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  position: relative;
+}
+
+.cartao {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cartao:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.icone-container {
+  background-color: #1e402f;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.icone-container img {
+  width: 30px;
+  height: 30px;
+}
+
+.tema {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  color: #1e402f;
+  margin-bottom: 0.5rem;
+}
+
+.cartao p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.cartao img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.botao-voltar-pagina, .botao-proxima-pagina {
+  background-color: #1e402f;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 2rem;
+}
+
+.botao-voltar-pagina:hover, .botao-proxima-pagina:hover {
+  background-color: #3a6651;
+  transform: translateY(-2px);
+}
+
+.botao-proxima-pagina {
+  float: right;
+}

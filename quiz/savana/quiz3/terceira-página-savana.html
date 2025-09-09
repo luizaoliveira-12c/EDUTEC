@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioTech - Quiz Savana</title>
+  <link rel="stylesheet" href="terceira-página-savana.css" />
+  <link rel="stylesheet" href="../../../header.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+  <header>
+    <div class="cabecalho-esquerda">
+      <div class="logo">
+        <img src="../../../home/imgs/leaf.png" alt="Logo" />
+        <span>BioTech</span>
+      </div>
+    </div>
+
+    <div class="cabecalho-centro">
+      <nav class="menu">
+        <a href="../../../conteudo/savana/savana.html">Conteúdo</a>
+        <a href="../../../inicio-quiz/inicio-quiz/quiz.html">Quiz</a>
+        <a href="../../../mapa/mapa.html">Mapa</a>
+      </nav>
+    </div>
+
+  </header>
+
+  <main class="quiz-container">
+    <div class="quiz-header">
+      <h2 class="quiz-title">SAVANA</h2>
+      <div class="quiz-progress">3/3</div>
+    </div>
+
+    <img src="../imgs/savanaimg3.png" alt="Savana" class="quiz-image" />
+
+    <div class="quiz-question">
+        Qual a vegetação típica da Savana?
+    </div>
+
+    <div class="quiz-options">
+      <!-- Opções -->
+      <button class="option-btn correct"
+        onclick="window.location.href='terceira-página-savana-resposta.html?destino=correto'">
+        Gramíneas, arbustos e árvores espaçadas
+      </button>
+
+      <button class="option-btn incorrect"
+        onclick="window.location.href='terceira-página-savana-resposta.html?destino=incorreto'">
+        Floresta densa e fechada
+      </button>
+
+      <button class="option-btn incorrect"
+        onclick="window.location.href='terceira-página-savana-resposta.html?destino=incorreto'">
+        Árvores altas e folhas largas
+      </button>
+
+    </div>
+
+    <img src="../imgs/dino-na-savana.png" alt="Dino" class="quiz-dino" />
+  </main>
+
+</body>
+
+</html>

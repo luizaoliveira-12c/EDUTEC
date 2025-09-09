@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioTech - Resposta Tundra</title>
+  <link rel="stylesheet" href="segunda-página-tundra-resposta.css" />
+  <link rel="stylesheet" href="../../../header.css" />
+</head>
+
+<body>
+
+  <header>
+    <div class="cabecalho-esquerda">
+      <a href="../../../index.html" class="logo-link">
+        <div class="logo">
+          <img src="../../../home/imgs/leaf.png" alt="Logo" />
+          <span>BioTech</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="cabecalho-centro">
+      <nav class="menu">
+        <a href="../../../conteudo/tundra/tundra.html">Conteúdo</a>
+        <a href="../../../inicio-quiz/inicio-quiz/quiz.html">Quiz</a>
+        <a href="../../../mapa/mapa.html">Mapa</a>
+      </nav>
+    </div>
+
+  </header>
+
+  <main class="quiz-container quiz-response">
+    <h2>Resposta</h2>
+    <p>Aqui vai a resposta correta</p>
+
+    <div class="progress-bar-bottom">
+      <div class="progress-bar-fill"></div>
+    </div>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const destino = params.get('destino'); 
+  
+    const mensagem = document.querySelector('.quiz-response h2');
+    const resposta = document.querySelector('.quiz-response p');
+    const barra = document.querySelector('.progress-bar-fill');
+  
+    if (destino === 'correto') {
+      mensagem.textContent = 'Parabéns! Resposta correta!';
+      resposta.textContent = 'A resposta correta é: Perto dos polos norte e sul.';
+    } else {
+      mensagem.textContent = 'Ops! Resposta incorreta.';
+      resposta.textContent = 'A resposta correta era: Perto dos polos norte e sul.';
+    }
+  
+    let duracao = 3000;
+    let inicio = performance.now();
+  
+    function animarProgresso(tempoAtual) {
+      let progresso = Math.min(((tempoAtual - inicio) / duracao) * 100, 100);
+      barra.style.width = progresso + '%';
+  
+      if (progresso < 100) {
+        requestAnimationFrame(animarProgresso);
+      } else {
+        window.location.href = destino === 'correto' 
+          ? '../quiz3/terceira-página-tundra.html' 
+          : 'segunda-página-tundra.html';
+      }
+    }
+
+    requestAnimationFrame(animarProgresso);
+  </script>  
+</body>
+
+</html>
