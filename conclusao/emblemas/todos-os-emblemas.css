@@ -27,7 +27,7 @@ body {
   --verde-claro: #c6d6b0;
 }
 
-/* HEADER */
+
 header {
   background-color: var(--verde-escuro);
   color: white;
