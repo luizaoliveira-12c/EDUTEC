@@ -21,7 +21,7 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  filter: blur(3px) brightness(0.7);
+  filter: blur(0.1875rem) brightness(0.7);
 }
 
 .intro-container {
@@ -40,10 +40,10 @@ body {
   display: block;
   padding: 1.2rem 3rem;
   margin-bottom: 1.5rem;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   font-size: 1.25rem;
   line-height: 1.5;
-  max-width: 600px;
+  max-width: 37.5rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -55,7 +55,7 @@ body {
 }
 
 .emblemas img {
-  width: 150px;
+  width: 9.375rem;
   height: auto;
   filter: brightness(0.4);
   transition: filter 2s ease-in-out;

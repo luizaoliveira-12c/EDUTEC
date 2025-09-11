@@ -21,7 +21,7 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  filter: blur(3px) brightness(0.7);
+  filter: blur(0.1875rem) brightness(0.7);
 }
 
 .card-container {
@@ -36,13 +36,13 @@ body {
   background-color: rgba(210, 105, 30, 0.85); 
   color: #fffaf0; 
   padding: 2.5rem 3rem;
-  border-radius: 15px;
+  border-radius: 0.9375rem;
   text-align: center;
-  max-width: 550px;
+  max-width: 34.375rem;
   width: 100%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 218, 185, 0.2); 
-  backdrop-filter: blur(5px);
+  box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.3);
+  border: 0.0625rem solid rgba(255, 218, 185, 0.2); 
+  backdrop-filter: blur(0.3125rem);
 }
 
 .card h2 {
@@ -59,9 +59,9 @@ body {
 
 .progress-bar-container {
   width: 100%;
-  height: 10px;
+  height: 0.625rem;
   background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   margin-bottom: 1.5rem; 
 }
 
@@ -69,6 +69,6 @@ body {
   height: 100%;
   width: 0;
   background-color: #ffc966; 
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   transition: width 0.1s linear;
 }
