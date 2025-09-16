@@ -21,7 +21,7 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    filter: blur(3px) brightness(0.7);
+    filter: blur(0.1875rem) brightness(0.7);
   } 
 
 header {
@@ -33,8 +33,8 @@ header {
   position: relative;
   z-index: 1000;
   background-color: rgba(44, 60, 94, 0.5); 
-  backdrop-filter: blur(5px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(0.3125rem);
+  border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.2);
 }
 
 .tundra-container {
@@ -51,12 +51,12 @@ header {
 .mensagens {
   background-color: rgba(10, 30, 50, 0.7);
   padding: 1.5rem 2rem;
-  border-radius: 15px;
+  border-radius: 0.9375rem;
   margin-bottom: 2rem;
-  max-width: 800px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  backdrop-filter: blur(5px);
+  max-width: 50rem;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0.625rem 1.875rem rgba(0,0,0,0.3);
+  backdrop-filter: blur(0.3125rem);
 }
 
 .mensagens p {
@@ -72,8 +72,8 @@ header {
 }
 
 .emblemas img {
-  width: 180px;
-  height: 180px;
+  width: 11.25rem;
+  height: 11.25rem;
   filter: brightness(0.3);
   transition: filter 0.5s ease-in-out, transform 0.3s ease;
 }
@@ -84,9 +84,9 @@ header {
 
 .dino {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
-  width: 250px;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  width: 15.625rem;
   height: auto;
   z-index: 500;
   animation: floatDino 4s ease-in-out infinite;
@@ -97,6 +97,6 @@ header {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-15px);
+    transform: translateY(-0.9375rem);
   }
 }

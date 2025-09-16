@@ -21,7 +21,7 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  filter: blur(3px) brightness(0.7);
+  filter: blur(0.1875rem) brightness(0.7);
 }
 
 .container-final {
@@ -36,13 +36,13 @@ body {
   background-color: rgba(30, 64, 47, 0.85);
   color: #f4ffb4;
   padding: 3rem 4rem;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   text-align: center;
-  max-width: 600px;
+  max-width: 37.5rem;
   width: 100%;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(244, 255, 180, 0.25);
-  backdrop-filter: blur(8px);
+  box-shadow: 0 0.9375rem 2.1875rem rgba(0, 0, 0, 0.4);
+  border: 0.0625rem solid rgba(244, 255, 180, 0.25);
+  backdrop-filter: blur(0.5rem);
   transform: scale(0.95);
   animation: fadeInScale 0.8s ease-out forwards;
 }
@@ -58,7 +58,7 @@ body {
   font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  text-shadow: 0.125rem 0.125rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
 .texto-box-final p {
@@ -68,7 +68,7 @@ body {
 }
 
 .emblema-final {
-  width: 150px;
+  width: 9.375rem;
   height: auto;
   margin-bottom: 2.5rem;
   animation: float 3s ease-in-out infinite;
@@ -79,7 +79,7 @@ body {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-15px);
+    transform: translateY(-0.9375rem);
   }
 }
 
@@ -90,16 +90,16 @@ body {
   font-size: 1.2rem;
   font-weight: 600;
   padding: 1rem 2.5rem;
-  border-radius: 50px;
+  border-radius: 3.125rem;
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.0625rem;
+  box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 
 .botao-final:hover, .botao-final:focus {
   background-color: #c1fcc1;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-0.1875rem);
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.3);
 }

@@ -726,6 +726,7 @@ body {
   transition: all 0.3s ease;
   display: inline-block;
   align-items: center;
+  justify-content: center;
 }
 
 .arrobainsta a:hover strong {
@@ -758,7 +759,6 @@ body {
   height: 1.75rem;
   filter: brightness(0) invert(1);
   transition: filter 0.3s ease;
-  
 }
 
 .icones-sociais a:hover img {
