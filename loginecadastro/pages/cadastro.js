@@ -1,30 +1,38 @@
-const button = document.querySelector("button")
-button.onclick = (event) => {
-    event.preventDefault()
-    sendUser()
+const formCadastro = document.getElementById('form-cadastro');
+
+if (formCadastro) {
+    formCadastro.addEventListener('submit', handleCadastro);
 }
 
-async function sendUser(){
-    const name = document.querySelector("#nome").value
-    const email = document.querySelector("#email").value
-    const password = document.querySelector("#senha").value
-
-    const user = {
-        name,
-        email,
-        password
-
+function handleCadastro(e) {
+    e.preventDefault(); 
+    
+    const email = document.getElementById("email").value.trim();
+    const senha = document.getElementById("senha").value.trim();
+    
+    if (!email || !senha) {
+        alert("Preencha todos os campos.");
+        return;
     }
-     
-    const response = await fetch("http://localhost:3333/cadastrar", {
-        method: "POST",
-        headers:{
-            "Content-type": "application/json"
-        },
-        body: JSON.stringify({user})
-    }).then(response => response.json())
 
-    alert(response.message)
+    // 1. Verifica se o usuário JÁ existe no sessionStorage
+    const storedUsersJSON = sessionStorage.getItem('appUsers');
+    const users = storedUsersJSON ? JSON.parse(storedUsersJSON) : [];
 
-    window.location.href = "../index.html"
+    const existingUser = users.find(user => user.email === email);
+    
+    if (existingUser) {
+        alert("Falha: Este e-mail já está cadastrado no seu navegador.");
+        return;
+    }
+
+    // 2. Adiciona o novo usuário
+    const newUser = { email: email, senha: senha };
+    users.push(newUser);
+
+    // 3. Armazena a lista ATUALIZADA de volta no sessionStorage
+    sessionStorage.setItem('appUsers', JSON.stringify(users));
+
+    alert("Cadastro  realizado com sucesso");
+    window.location.href = './login.html'; 
 }
