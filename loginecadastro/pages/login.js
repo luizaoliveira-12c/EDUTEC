@@ -1,9 +1,7 @@
-// login.js (USANDO sessionStorage - CORRIGIDO)
+const formulariodeLogin = document.getElementById('formulario');
 
-const formLogin = document.getElementById('form-login');
-
-if (formLogin) {
-    formLogin.addEventListener('submit', handleLogin);
+if (formulariodeLogin) {
+    formulariodeLogin.addEventListener('submit', handleLogin);
 }
 
 function handleLogin(e) {
@@ -17,22 +15,27 @@ function handleLogin(e) {
         return;
     }
 
-    // 1. Busca a lista de usuários armazenada
-    const storedUsersJSON = sessionStorage.getItem('appUsers');
-    const users = storedUsersJSON ? JSON.parse(storedUsersJSON) : [];
     
-    // 2. Tenta encontrar o usuário
-    const foundUser = users.find(user => 
+    const usuariosGuardadosJSON = sessionStorage.getItem('appUsers');
+    const users = usuariosGuardadosJSON ? JSON.parse(usuariosGuardadosJSON) : [];
+    
+   
+    const usuarioEncontrado = users.find(user => 
         user.email === email && user.senha === senha
     );
 
-    if (foundUser) {
-     // 3. 🚨 FEEDBACK DE SUCESSO
-        alert(`✅ Login local realizado com sucesso! Bem-vindo(a), ${email}.`);
-    
+    if (usuarioEncontrado) {
+     
+        alert(` Login realizado com sucesso! Bem-vindo(a)!`);
+        
+       
+        sessionStorage.setItem('usuarioAtivo', email);
+        
+        
+        window.location.href = '../index.html'; 
         
     } else {
-        // 6. 🚨 FEEDBACK DE FALHA
-        alert("❌ Falha no Login: E-mail ou senha incorretos ou não cadastrados.");
+        
+        alert(" E-mail ou senha incorretos ou não cadastrados! Tente novamente.");
     }
 }

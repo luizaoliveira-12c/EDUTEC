@@ -1,7 +1,7 @@
-const formCadastro = document.getElementById('form-cadastro');
+const formulariodeCadastro = document.getElementById('formularioDeCadastro');
 
-if (formCadastro) {
-    formCadastro.addEventListener('submit', handleCadastro);
+if (formulariodeCadastro) {
+    formulariodeCadastro.addEventListener('submit', handleCadastro);
 }
 
 function handleCadastro(e) {
@@ -19,16 +19,16 @@ function handleCadastro(e) {
     const storedUsersJSON = sessionStorage.getItem('appUsers');
     const users = storedUsersJSON ? JSON.parse(storedUsersJSON) : [];
 
-    const existingUser = users.find(user => user.email === email);
+    const usuarioExistente = users.find(user => user.email === email);
     
-    if (existingUser) {
+    if (usuarioExistente) {
         alert("Falha: Este e-mail já está cadastrado no seu navegador.");
         return;
     }
 
     // 2. Adiciona o novo usuário
-    const newUser = { email: email, senha: senha };
-    users.push(newUser);
+    const novoUsuario = { email: email, senha: senha };
+    users.push(novoUsuario);
 
     // 3. Armazena a lista ATUALIZADA de volta no sessionStorage
     sessionStorage.setItem('appUsers', JSON.stringify(users));
