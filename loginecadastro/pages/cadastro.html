@@ -1,19 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de novos usuários</title>
+
+    
     <script src="./cadastro.js" defer></script>
+
+    <link rel="stylesheet" href="../../header.css">
+
+    
     <link rel="stylesheet" href="cadastro.css">
 </head>
+
 <body>
+
     <header>
-        <h1>Cadastrar usuário</h1>
+        <div class="cabecalho-esquerda">
+            <a href="../../index.html" class="logo-link">
+                <div class="logo">
+                    <img src="../../home/imgs/leaf.png" alt="Logo" />
+                    <span>BioTech</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="cabecalho-centro">
+            <nav class="menu">
+                <a href="../../conteudo/tundra/tundra.html">Conteúdo</a>
+                <a href="../../inicio-quiz/inicio-quiz/quiz.html">Quiz</a>
+                <a href="../../mapa/mapa.html">Mapa</a>
+                <a href="./cadastro.html">Cadastro</a>
+            </nav>
+        </div>
+
+        <div class="header-right">
+        </div>
     </header>
 
+    <h1 class="titulo-cadastro">Cadastre-se</h1>
+
     <main>
-        <form action="" id="formularioDeCadastro">
+        <form id="formularioDeCadastro">
             <div>
                 <label for="nome">Nome completo:</label>
                 <input type="text" placeholder="Digite seu nome..." id="nome" required>
@@ -29,8 +58,14 @@
                 <input type="password" placeholder="Digite uma senha..." id="senha" required>
             </div>
 
-            <button>Cadastrar</button>
+            <button type="submit">Cadastrar</button>
         </form>
     </main>
+    <p class="ja-tem-conta">
+    Já tem uma conta?
+<a href="login.html">Faça login</a>
+</p>
+
+
 </body>
 </html>

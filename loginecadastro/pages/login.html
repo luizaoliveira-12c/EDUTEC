@@ -1,30 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Cadastro de novos usuários</title>
+
+    
     <script src="./login.js" defer></script>
+
+    <link rel="stylesheet" href="../../header.css">
+
+  
+    <link rel="stylesheet" href="cadastro.css">
 </head>
+
 <body>
-    <main>
-        <form action="" id="formulario">
-            <h1>Login com sua conta</h1>
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" required>
 
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" required>
-
-            
-
-            <button id="login" type="submit">login</button>
-             <div class="ancora-cadastro">
-            <p>Novo Usuário?</p>
-            <a href="./cadastro.html">Cadastre-se aqui</a>
+    <header>
+        <div class="cabecalho-esquerda">
+            <a href="../../index.html" class="logo-link">
+                <div class="logo">
+                    <img src="../../home/imgs/leaf.png" alt="Logo" />
+                    <span>BioTech</span>
+                </div>
+            </a>
         </div>
-        </form>
+        <div class="cabecalho-centro">
+            <nav class="menu">
+                <a href="../../conteudo/tundra/tundra.html">Conteúdo</a>
+                <a href="../../inicio-quiz/inicio-quiz/quiz.html">Quiz</a>
+                <a href="../../mapa/mapa.html">Mapa</a>
+                <a href="./cadastro.html">Cadastro</a>
+            </nav>
+        </div>
 
+        <div class="header-right">
+        </div>
+    </header>
+
+    <h1 class="titulo-cadastro">Faça login</h1>
+
+    <main>
+        <form id="formulario">
+            <div>
+                <label for="nome">Nome completo:</label>
+                <input type="text" placeholder="Digite seu nome..." id="nome" required>
+            </div>
+
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" placeholder="Digite seu email..." id="email" required>
+            </div>
+
+            <div>
+                <label for="senha">Senha:</label>
+                <input type="password" placeholder="Digite uma senha..." id="senha" required>
+            </div>
+
+            <button type="submit">Logar</button>
+        </form>
     </main>
+    <p class="ja-tem-conta">
+    Não tem uma conta?
+<a href="cadastro.html">Faça cadastro</a>
+</p>
+
+
 </body>
 </html>

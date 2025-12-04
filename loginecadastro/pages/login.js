@@ -32,7 +32,7 @@ function handleLogin(e) {
         sessionStorage.setItem('usuarioAtivo', email);
         
         
-        window.location.href = '../index.html'; 
+        window.location.href = '../../index.html'; 
         
     } else {
         
